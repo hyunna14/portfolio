@@ -1,0 +1,282 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Baskerville&family=Noto+Sans+KR:wght@300;400;500&family=Poppins:wght@500&family=Playfair+Display:wght@400;500&family=Zen+Antique&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif; font-weight: 400; font-size: 16px;}
+h1 {font-family: 'Playfair Display', serif;}
+h2 {font-family: 'Zen Antique', serif; font-weight: 400; font-size: 70px;}
+
+/*header*/
+header {width: 100%; position: fixed; z-index: 100;}
+.innerHeader {width: 92%; height: 95px; line-height: 95px; margin: 0 auto; position: relative; color: #fff;}
+.innerHeader .logo {position: absolute; left: 0; top: 0;}
+.innerHeader .logo img:last-child {display: none;}
+.innerHeader .logo img {width: 100%;}
+.innerHeader .gnb {position: absolute; left: 18%; top: 0;}
+.innerHeader .gnb > ul > li {float: left;}
+.innerHeader .gnb > ul > li + li {margin-left: 80px;}
+.innerHeader .gnb > ul > li > a {font-size: 18px; font-weight: 500; font-family: 'Poppins', sans-serif; display: block;}
+.innerHeader .gnb > ul > li > ul {position: absolute; top: 95px; display: none;}
+.innerHeader .gnb > ul > li > ul li {float: left; line-height: 80px;}
+.innerHeader .gnb > ul > li > ul li + li {margin-left: 50px;}
+.innerHeader .gnb > ul > li ul {left: 0;}
+.innerHeader .gnb > ul > li ul li {font-weight: 500; transition: all 0.3s;}
+.innerHeader .gnb > ul > li.culture ul {left: 10%;}
+.innerHeader .gnb > ul > li.company ul {left: 25%;}
+.innerHeader .gnb > ul > li.IR ul {left: 40%;}
+.innerHeader .gnb > ul > li.customer ul {left: 41%;}
+.innerHeader .gnb span.bar {position: absolute; left: 0; top: 95px; width: 0; height: 3px; background: #fff; transition: all 0.3s;}
+
+/* 헤더 호버시 배경 */
+header.on {border-bottom: 1px solid #ddd;}
+header.on:before {content: ''; position: absolute; left: 0; bottom: -75px; width: 100%; height: 75px; background: #fff; border: 1px solid #ddd;}
+
+/* fixHeader */
+header.scrolled {background: #fff; position: fixed;}
+header.scrolled .innerHeader .logo a img:first-child { display: none;}
+header.scrolled .innerHeader .logo a img:last-child { display: block; margin-top: 30px;}
+header.scrolled .innerHeader .gnb > ul {color: #000;}
+header.scrolled .innerHeader .tnb li {color: #000;}
+header.scrolled .innerHeader .tnb li .eng {border: 1px solid #000;}
+header.scrolled .innerHeader .btn li {color: #000;}
+
+/*tnb*/
+.innerHeader nav.tnb {position: absolute; left: 72%; top: 0;}
+.innerHeader nav.tnb li{font-weight: 400; float: left; margin-right: 50px;}
+.innerHeader nav.tnb li i {margin-left: 8px; font-size: 16px; font-weight: bold} 
+.innerHeader .btn {float: right;}
+.innerHeader .btn li{float: left; margin-left: 30px; font-weight: bold;}
+.innerHeader .btn li:nth-child(1) {font-size: 15px; color: #fff; position:relative; z-index: 0; margin-right: 10px; margin-left: 0;}
+.innerHeader nav .btn li:nth-child(1):before {position: absolute; content: ''; width: 30px; height: 30px; border-radius: 50%; background: #000; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: -1;}
+.innerHeader .btn li:nth-child(2) {font-size: 20px;}
+.innerHeader .btn li.menu {font-size: 30px;}
+
+/* .menuOpen */
+.menuOpen {width: 100%; height: 100vh; position: fixed; background: #fff; top: -9000px; left: 0; display: block; z-index: 100; overflow: hidden; transition: 1.2s;}
+.menuOpen .logo_red {position: absolute; left: 4%; top: 0; width: 90px; height: 50px; margin-top: 0;}
+.menuOpen .logo_red img {width: 100%;}
+.menuOpen .gnb {width: 100%; position: absolute; left: 15%; top: 50%; transform: translateY(-55%);}
+.menuOpen .gnb > li {font-family: 'Playfair Display'; display: block; color: #000; font-size: 45px; font-weight: 500; line-height: 2; transition: all 0.5s;}
+.menuOpen .gnb> li:after {width: 8px; height: 8px; position: absolute; left: -50px; border-radius: 50%; background: #000; content: ''; transform: translateY(-500%); display: none;}
+.menuOpen .gnb > li:hover:after {display: block;}
+.menuOpen .gnb > li ul {position: absolute; font-size: 16px; left: 20%; top: 30px; line-height: 2.5; display: none; font-weight: 700;}
+.menuOpen .gnb > li img {width: 50%; position: absolute; top: 50%; transform: translateY(-50%); right: 0; opacity: 0; transition: all 0.5s;}
+.menuOpen .gnb > li:hover img {opacity: 1; transition: all 0.8s;}
+.menuOpen .gnb > li:hover ul {display: block;}
+.menuOpen .sns {position: absolute; left: 15%; bottom: 8%;}
+.menuOpen .sns li {float: left; display: block; color: #000; font-size: 25px; margin-right: 30px;}
+.menuOpen .close {width: 30px; height: 30px; position: absolute; top: 0; right: 4%; color: #000; font-size: 35px; cursor: pointer;}
+
+.menuOpen.on {top: 0; transition: 1s;}
+
+/*.menuOpen animation */
+.menuOpen .gnb > li ul li {animation-name: slide-in2; animation-duration: 0.6s;}
+.menuOpen .gnb > li ul li:nth-child(2) {animation-duration: 0.8s;}
+.menuOpen .gnb > li ul li:nth-child(3) {animation-duration: 1s;}
+.menuOpen .gnb > li ul li:nth-child(4) {animation-duration: 1.2s;}
+.menuOpen .gnb > li ul li:nth-child(5) {animation-duration: 1.4s;}
+@keyframes slide-in2 {
+    0% {transform: translateX(50px); opacity: 0;}
+}
+
+/*visual*/
+.visual {width: 100%; height: 100vh; position: relative; overflow: hidden;}
+.visual .slide > li {width: 100%; height: 100%; overflow: hidden;}
+.visual .slide li .img {width: 100%; overflow: hidden;}
+.visual .slide li .img img {width: 100%;}
+.visual .slide .txtBox {color: #fff; position: absolute; top: 26%; left: 200px;}
+#slick-slide01 .txtBox {top: 35%;}
+.visual .slide .txtBox h2 {font-size: 100px;}
+.visual .slide .txtBox p {font-size: 24px; font-weight: 500; margin: 60px 0 50px;}
+.visual .slide .txtBox p a {display: inline-block; font-size: 18px; font-weight: 600;}
+.visual .slide .txtBox p span {text-shadow: 0 0 5px rgba(0,0,0,0.2); transition: ease-in;}
+
+/* animation */
+.visual .slick-active .txtBox h2.motion {animation: slide-up 1s;}
+.visual .slick-active .txtBox p.motion {animation: slide-up 1.4s;}
+
+/*dots*/
+.slick-dots {position: absolute; left: 200px; bottom: 15%; display: flex;}
+.slick-dots li button {text-indent: -9999px; width: 10px; height: 10px; background: #fff; opacity: 0.5; border: none; border-radius: 0; transform: rotate(45deg); text-shadow: none; cursor: pointer; position: relative;}
+.slick-dots li.slick-active button {opacity: 1;}
+.slick-dots li + li {margin-left: 50px;}
+
+/* 슬라이드 게이지바 */
+.gage_bar {position: absolute; right: 10%; bottom: 0; width: 2px; height: 240px;}
+.gage_bar:before {width: 100%; height: 100%; background: #fff; opacity: 0.2; position: absolute; content: ''; z-index: 10;}
+.gage_bar:after {position: absolute; content: ''; width: 5px; height: 5px; border-radius: 50%; background: #fff; left: 50%; top: -20px; transform: translateX(-50%);}
+.gage_bar span {position: absolute; width: 2px; height: 60px; top: 0; opacity: 1; z-index: 20; background: #fff; transition: ease-out;}
+
+/* 게이지바 애니메이션 */
+.slick-active .gage_bar span {animation-name: gage; animation-duration: 3s;}
+@keyframes gage {
+    0% {top: 0;}
+    100% {top: 155px;}
+}
+
+/*Issue*/
+.issue {width: 100%; margin: 150px 0; overflow: hidden;}
+.issue .inner {width: 1460px; margin: 0 25% 0 15%; box-sizing: border-box;}
+.issue .inner h2 {font-size: 70px;}
+.issue .inner p.text {font-size: 20px; font-weight: 500; margin: 50px 0 50px 200px;}
+.issue .inner .asideBox {width: 200px; float: left; color: #333; margin-top: 150px;}
+.issue .inner .asideBox img {width: 100%;}
+.issue .inner .asideBox h4 {font-size: 18px; color: #000;}
+.issue .inner .asideBox h4 span {font-size: 15px;}
+.issue .inner .asideBox p {margin: 5px 0}
+.issue .inner .asideBox p i {margin-left: 5px; transform: rotate(-45deg);}
+.issue .inner ul {width: 1260px; float: right;}
+.issue .inner ul li {width: 620px; float: left; padding-left: 100px; box-sizing: border-box; margin-bottom: 60px; position: relative;}
+.issue .inner ul li:nth-child(3) {margin-top: -190px;}
+.issue .inner ul li:nth-child(5) {margin-top: -310px;}
+.issue .inner ul li img {width: 100%;}
+.issue .inner ul li h3 {font-size: 30px; font-weight: 500; margin: 20px 0;}
+.issue .inner ul li p.rotate {position: absolute; transform: rotate(-90deg); left: 20px; bottom: 172px; font-size: 18px; color: #999; font-family: 'Poppins', sans-serif;}
+.issue .inner ul li:nth-child(3) p.rotate {left: 20px; bottom: 190px;}
+.issue .inner ul li:nth-child(4) p.rotate {left: 20px; bottom: 215px;}
+.issue .inner ul li:nth-child(5) p.rotate {left: 10px; bottom: 185px;}
+
+/* ani */
+.issue .inner h2.motion {animation-name: slide-in; animation-duration: 1.2s;}
+@keyframes slide-in {
+    0% {transform: translateX(-50px); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+.issue .inner p.text.motion {animation: slide-up 1.2s;}
+@keyframes slide-up {
+    0% {transform: translateY(50px); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+.issue .inner ul li.motion {animation: slide-up 0.8s;}
+.issue .inner ul li:nth-last-child(2n) {animation-duration: 1.2s;}
+
+/*section.color*/
+section.color {width: 100%; height: 100vh; background: url(../img/color_bg.jpg)no-repeat center/cover; background-attachment: fixed; padding-bottom: 900px; margin-bottom: 150px;}
+.color .inner {width: 70%; margin: 0 auto;}
+.color .inner h1 {font-size: 120px; letter-spacing: 2.5px; color: #fff; padding: 150px 0 100px;}
+.color .inner p.mainTxt {font-size: 20px; color: #fff; line-height: 1.65; margin-bottom: 90px;}
+.color .inner .left {width: 40%; float: left;}
+.color .inner .left img {width: 100%;}
+.color .inner .left p.find {font-size: 28px; color: #fff; text-align: center; margin-top: 90px; font-family: 'Poppins', sans-serif;}
+.color .inner .left p.find i {margin-right: 15px;}
+.color .inner .right {width: 55%; margin-left: 5%; margin-top: 200px; overflow: hidden; float: right; padding-bottom: 150px;}
+.color .inner .right li {float: left; width: 42%; background: #fff; position: relative;}
+.color .inner .right li:nth-child(2n) {margin-left: 8%;}
+.color .inner .right li:nth-child(1), .color .inner .right li:nth-child(2) {margin-bottom: 50px;}
+.color .inner .right li:nth-child(1), .color .inner .right li:nth-child(3) {transform: translateY(150px);}
+.color .inner .right li .txtBox {padding: 320px 10px 10px; box-sizing: border-box;}
+.color .inner .right li .txtBox p {font-family: 'Poppins', sans-serif; color: #000; font-size: 16px; font-weight: normal; margin-top: 10px;}
+.color .inner .right li:after {position: absolute; content: ''; width: 280px; height: 280px; background: #005171; left: 10px; top: 10px;}
+.color .inner .right li:nth-child(2):after {background: #7e9aaa;}
+.color .inner .right li:nth-child(3):after {background: #98b2c6;}
+.color .inner .right li:nth-child(4):after {background: #bdc8d2;}
+
+/* .color .animation */
+.color .inner h1.motion {animation: slide-in 1.2s;}
+.color .inner p.mainTxt {animation: slide-up 1.2s;}
+.color .inner .left img.motion {animation: slide-up 0.8s;}
+.color .inner .right li.motion {animation: up 1.2s;}
+@keyframes up {
+    0% {transform: translateY(50px); opacity: 0;}
+    70% {transform: translateY(-10px); opacity: 1;}
+    100% {transform: translateY(0px);}
+}
+.color .inner .right li:nth-child(1).motion {animation: up2 1s;}
+.color .inner .right li:nth-child(3).motion {animation: up2 1s;}
+@keyframes up2 {
+    0% {transform: translateY(200px); opacity: 0;}
+    70% {transform: translateY(140px); opacity: 1;}
+    100% {transform: translateY(150px);}
+}
+
+/* .area */
+.area {width: 100%; overflow: hidden;}
+.area .inner {width: 1460px; margin-left: 20%; position: relative;}
+.area .inner > p {position: absolute; font-size: 20px; top: 250px; margin-left: 150px;}
+.area .inner .slide {width: 120%; margin-top: 50px;}
+.area .inner .slide li + li {margin-left: 50px; transition: all 0.5s;}
+.area .inner .slide li {width: 30%; position: relative;}
+.area .inner .slide li img {width: 100%;}
+.area .inner .slide li .txtBox {position: absolute; bottom: 50px; left: 30px; color: #fff;}
+.slide li .txtBox h3 {font-size: 45px;}
+.area .inner .slide li .txtBox p {font-size: 20px; margin-top: 10px;}
+.slick-active .area .inner .slick-current .txtBox p {display: block;}
+.area .inner .slide .slick-arrow {position: absolute; left: 34%; bottom: 50px; text-indent: -9999px; border: 1px solid #000; width: 62px; height: 62px; border-radius: 50%; background: none; cursor: pointer; z-index: 20; background: #fff;}
+.area .inner .slide .slick-arrow:after {content: '<'; position: absolute; width: 100%; height: 100%; left: 0px; top: 25%; color: #000; z-index: 25; font-size: 25px; text-indent: 0;}
+.area .inner .slide .slick-arrow.slick-next {left: 39%;}
+.area .inner .slide .slick-arrow.slick-next:after {content: '>';}
+.area .inner .slide .slick-arrow:hover {background: #000;}
+.area .inner .slide .slick-arrow:hover:after {color: #fff;}
+
+/* .area aniamtion */
+.area .inner h2 {animation: slide-in 1.2s;}
+.area .inner > p {animation: slide-up 1.2s;}
+.area .inner .slide.motion {animation: slide-inR 1.2s;}
+@keyframes slide-inR {
+    0% {transform: translateX(500px);}
+}
+
+/* .area li 위아래 지그재그로 움직이게 */
+.area .inner .slide li.row {margin-top: 150px;}
+
+/* .news */
+section.info {width: 100%; margin-top: 150px; margin-bottom: 150px;}
+.info .inner {width: 80%; margin-left: 20%; overflow: hidden;}
+.info .inner .IR {width: 26%; float: left;}
+.info .inner .IR h2 {margin-bottom: 50px;}
+.info .inner .IR p {font-size: 18px;}
+.info .inner .IR p.red {font-family: 'Poppins'; color: rgb(245, 67, 67);}
+.info .inner .IR p.red span {font-size: 45px;}
+.info .inner .news {width: 74%; float: left;}
+.info .inner .news ul {margin-top: 10px;}
+.info .inner .news ul li {border-bottom: 1px solid #ddd; padding-top: 30px; padding-bottom: 30px;}
+.info .inner .news ul li p {color: #777;}
+.info .inner .news ul li p.subTit {font-size: 24px; font-weight: 500; margin-bottom: 20px; color: #000;}
+
+/* .info animation */
+.info .inner h2.motion {animation: slide-in 1.2s;}
+.info .inner .news ul li.motion {animation: slide-in 0.8s;}
+.info .inner .news ul li:nth-last-child(2) {animation-duration: 1.2s;}
+.info .inner .news ul li:nth-last-child(3) {animation-duration: 1.6s;}
+
+/* section.search */
+section.search {width: 100%; background: url(../img/img-search.jpg)no-repeat center/cover;}
+/* 검색창 공통 */
+.search form {padding: 120px 20% 50px; width: 1000px; margin: 0 auto; position: relative;}
+.search form input {width: 100%; height: 70px; border: none; padding-left: 80px; font-size: 24px; color: #aaa;}
+.search form input::placeholder {font-size: 24px; color: #aaa;}
+.search form input:focus {outline: none;}
+.search form input:focus input::placeholder {display: none;}
+.search form button {display: none;}
+.search p {width: 1000px; margin: 0 auto; color: #fff; font-size: 18px;}
+.search form span {position: absolute; content: ''; left: 23.2%; top: 145px; font-size: 20px; color: #aaa;}
+.search form input:focus span {color: #333;}
+.search p:last-child {padding-bottom: 120px; margin-top: 10px; font-size: 24px; font-size: 500;}
+
+/* .search animation */
+.search p:last-child.motion {animation: slide-up 1s;}
+
+/* footer */
+footer {width: 100%; margin: 50px 0; font-size: 12px;}
+footer .inner {width: 95%; margin: 0 auto;}
+footer .inner .top {width: 100%; overflow: hidden;}
+footer .inner .top ul {float: left;}
+footer .inner .top .sns {width: 7%; overflow: hidden; display: flex;justify-content: space-between; font-size: 24px; line-height: 50px;}
+footer .inner .top .sc {width: 13%; margin: 0 34%; text-align: center; font-family: 'Poppins'; font-size: 14px; padding-left: 20px; box-sizing: border-box;}
+footer .inner .top .sc li:last-child {font-size: 24px; letter-spacing: 1.6px;}
+footer .inner .top select {width: 12%; background: none; padding: 20px 10px; border: none; border-bottom: 1px solid #ddd; cursor: pointer; outline: none; position: relative;}
+footer .inner .bottom {width: 100%;}
+footer .inner .bottom ul {margin: 30px 0; color: #555; line-height: 1.8;}
+footer .inner .bottom ul li span {margin: 0 10px;}

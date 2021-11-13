@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700;900&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+img {vertical-align: middle;}
+
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif; background: #fff; font-size: 16px; line-height: 1.6;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden;}
+
+/*공통요소*/
+.inner {width: 1100px; margin: 0 auto;}
+.textBox {}
+.textBox .title_s {text-transform: uppercase; font-size: 38px; font-weight:900; display: inline-block; padding-right: 60px; position: relative; }
+.textBox .title_s:after {content: ''; width: 50px; height: 6px; background: #000; position: absolute; top: 50%; transform: translateY(-50%); right: 0;}
+.textBox .title_num {display: inline-block; float: right; font-size: 32px; font-weight: 900; letter-spacing: -2px; position: relative;}
+.textBox .title_num:after {content: ''; width: 40px; height: 4px; background: #000; position: absolute; bottom: 0; right: 0;}
+.textBox p {margin: 20px 0 30px;}
+.textBox .title_btn {background: #000; color: #fff; font-size: 20px; font-weight: bold; display: inline-block; padding: 5px 30px; margin-bottom: 40px;}
+
+/*ul.list 공통요소*/
+ul.list li a {display: block; width: 100%; height: 100%; overflow: hidden;}
+ul.list li a img {width: 100%; transition: all 0.5s;}
+
+/*hover효과, focus효과*/
+ul.list li a:hover img, section.living ul.list li a:focus img {transform: scale(1.2); transition: all 1s; }
+
+/*section.visual*/
+section.visual {width: 100%; height: 950px; background: url(../img2/visual.png)no-repeat center/cover; color: #fff; border-top: 1px solid #f3c565; }
+section.visual .mainTitle {text-transform: uppercase; line-height: 1.2; margin-top: 100px; }
+section.visual .mainTitle p.top {font-size: 43px; letter-spacing: 8px; margin-bottom: 50px; }
+section.visual .mainTitle p span {color: #000; }
+section.visual .mainTitle p {font-size: 20px; margin-bottom: 50px;}
+section.visual .mainTitle h1 {font-size: 200px; letter-spacing: 105px; margin-bottom: 50px; margin-left: -12px; font-weight: 900;}
+section.visual .textBox {border: 1px solid rgba(255, 255, 255, 0.5); padding: 40px 50px 50px; box-sizing: border-box; border-radius: 20px;}
+section.visual .title_s {font-size: 30px; letter-spacing: 8px; margin-bottom: 10px; display: inline-block; padding-right: 60px; position: relative;}
+section.visual .title_s:after {content: '';width: 50px; height: 6px; background: #fff; position: absolute; top:50%; margin-top: -3px; right: 0;}
+
+/*section.living*/
+section.living {width: 100%; padding: 100px 0; }
+section.living ul.list {width: 100%; overflow: hidden;}
+section.living ul.list li {float: left; margin-bottom: 20px;}
+section.living ul.list li:nth-child(2) {float: right;}
+
+/*section.clothing*/
+section.clothing {padding: 100px 0; background: #f0f0f0;}
+section.clothing ul.list {overflow: hidden;}
+section.clothing ul.list li {float: left; margin-bottom: 20px;}
+section.clothing ul.list li:nth-child(2) {float: right;}
+section.clothing ul.list li:nth-child(3) {float: right;}

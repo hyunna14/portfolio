@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gowun+Batang:wght@400;700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@400;700&family=Hahmlet:wght@400&display=swap');
+@font-face {
+    font-family: 'nanumSquareB';
+    src: url(../fonts/NanumSquareB.ttf);
+    font-family: 'nouvelleVague';
+    src: url(../fonts/nouvelle_vague_final.ttf)
+}
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif;  font-size: 16px; font-weight: 400; line-height: 1.6;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.inner {width: 1400px; margin: 0 auto;}
+h2 {font-family: 'Cormorant Garamond'; font-size: 50px; color: #333; line-height: }
+h2.ko {font-family: 'Hahmlet'; font-weight: 400; font-size: 44px;}
+h3 {font-family: 'Cormorant Garamond';}
+p {color: #777;}
+
+/*공통*/
+p.more {font-family: 'nanumSquareB'; font-size: 12px; font-weight: bold; color: #333; display: inline-block; margin-top: 45px;}
+p.more a {display: inline-block; border: 1px solid #777; padding: 14px 28px; background: #fff; letter-spacing: 0.5px;}
+p.more a:hover {color: #c1b94a; border: 1px solid #cfca80;}
+p.num {font-family: 'nouvelleVague'; font-size: 220px; color: #000; line-height: 220px;}
+p.num span {font-family: 'Playfair Display', serif; font-weight: 900;}
+
+/*header*/
+header {width: 100%; position: fixed; padding-top: 4%; z-index: 100; overflow: hidden;}
+.innerHeader {width: 90%; margin: 0 auto; overflow: hidden;}
+.innerHeader .prev {width: 90px; float: left;}
+.innerHeader .prev i {font-size: 65px; color: #9869d4;}
+.innerHeader .menu {float: right; width: 50px; position: relative; padding-bottom: 20px; margin-top: 1.5%;}
+.innerHeader .menu span {width: 100%; height: 5px; display: block; position: absolute; background: #9769d4; border-radius: 2px;}
+.innerHeader .menu span.bar_short {width: 60%; bottom: 0; right: 0;}
+
+/*menu 레이아웃*/
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #cfca80; transition: all 0.8s;}
+.menuOpen .menuWrap .prev {position: absolute; left: 5%; top: 5%;}
+.menuOpen .menuWrap .prev {width: 90px; float: left;}
+.menuOpen .menuWrap .prev i {font-size: 65px; color: #fff;}
+.menuOpen .menuWrap .close {font-size: 50px; position: absolute; top: 5%; right: 5%;}
+.menuOpen .menuWrap .close span {color: #fff; font-weight: bold;}
+.menuOpen .menuWrap ul {width: 100%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);}
+.menuOpen .menuWrap ul li {font-family: 'Playfair Display', serif; font-size: 50px; color: #fff; opacity: 1; line-height: 3.2; letter-spacing: 1px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap ul li a {position: relative; background: #cfca80; padding: 0 20px;}
+.menuOpen .menuWrap ul li:hover {opacity: 1;}
+.menuOpen .menuWrap ul li:after {content: ''; position: absolute; width: 0%; height: 1px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; z-index: -10; transition: all 0.5s;}
+.menuOpen .menuWrap ul li:hover:after {width: 100%;}
+
+/*.menu 열기*/
+.menuOpen .menuWrap {transform: translateX(9999px);}
+.menuOpen .menuWrap.on {transform: translateX(0px);}
+
+/* visual */
+.visual {width: 100%; overflow: hidden;}
+.visual .inner {width: 1400px; height: 720px; margin: 0 auto; position: relative;}
+.visual .inner .slide {width: 34%; position: absolute; left: 50%; transform: translateX(-50%); top: 0;}
+.visual .inner .slide li {width: 100%; float: left;}
+.visual .inner .slide li img {width: 100%;}
+.visual .inner .mainTit {position: absolute; left: 22%; top: 50%; transform: translateY(-50%);}
+.visual .inner .mainTit h2 {font-size: 75px;}
+.visual .inner .mainTit p {margin-left: 15px;}
+
+/* visual animation */
+.visual .inner .mainTit h2.motion {animation-name: slide-up; animation-duration: 0.5s;}
+.visual .inner .mainTit p.motion {animation-name: slide-up; animation-duration: 1s;}
+@keyframes slide-up {
+    0% {transform: translateY(50px); opacity: 0;}
+    100% {transform: translateY(0);}
+}
+
+/* section.intro */
+.intro {width: 100%; margin-top: 50px;}
+.intro .inner {overflow: hidden;}
+.intro .inner .left {width: 35%; float: left; border-right: 1px solid #ddd; padding-left: 15%; box-sizing: border-box;}
+.intro .inner .left li:first-child {margin-bottom: 30px;}
+.intro .inner .left li h3 {font-size: 24px;}
+.intro .inner .left li p {font-size: 14px;}
+.intro .inner .right {width: 55%; margin-left: 10%; float: right; margin-top: 10px;}
+.intro .inner .right h2 {font-size: 36px; margin-bottom: 20px;}
+.intro .inner .right p {font-size: 14px;}
+
+/* intro animation */
+.intro p.motion {animation-name: fade-in; animation-duration: 1s;}
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* section.design */
+section.design {width: 100%; margin-top: 250px;}
+.design .inner {overflow: hidden;}
+.design .inner .left {width: 50%; padding-left: 10%; box-sizing: border-box; float: left; margin-bottom: 150px;}
+.design .inner .left .txtBox {margin-left: 10%; margin-bottom: 75px;}
+.design .inner .left .txtBox p {margin-top: 30px;}
+.design .inner .left .symbol {width: 100%; margin: 0 auto; overflow: hidden; display: flex; justify-content: space-around; padding-bottom: 10px;}
+.design .inner .left .symbol li {float: left;}
+.design .inner .left .symbol li p {padding: 25px 40px; background: #fff; box-shadow: 3px 3px 10px rgba(0,0,0,0.3); border-radius: 20px;}
+.design .inner .right {width: 45%; float: right; margin-top: 20px;}
+.design .inner .right img {width: 50%; margin-top: 50px; margin-left: 18%;}
+
+/* design animation */
+.design .inner .txtBox h2.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.design .inner .txtBox p.motion {animation-name: fade-in; animation-duration: 1.4s;}
+.design .inner .left .symbol.motion {animation-name: slide-in; animation-duration: 0.5s;}
+@keyframes slide-in {
+    0% {transform: translateX(-80px); opacity: 0;}
+    100% {transform: translateX(0px);}
+}
+
+/* .design .color */
+.design .inner .color {width: 100%; overflow: hidden; margin-top: 180px;}
+.design .inner .color ul {width: 55%; float: left; padding-left: 15%; box-sizing: border-box;}
+.design .inner .color ul li {display: inline-block;}
+.design .inner .color ul li p {text-align: center; padding: 85px 35px; border-radius: 80px; background: #fff; margin-right: 20px;}
+.design .inner .color ul li:first-child p {color: #333;}
+.design .inner .color ul li:nth-child(1) p {border: 1px solid #ddd;}
+.design .inner .color ul li:nth-child(2) p {background: #f1f1f1;}
+.design .inner .color ul li:nth-child(3) p {color: #fff; background: #F45356; padding: 60px 30px; margin-right: 0;}
+.design .inner .color ul li p span {font-weight: bold;}
+.design .inner .color .txtBox {width: 45%; float: left; margin-top: 20px;}
+.design .inner .color .txtBox h2 {display: inline-block; border-top: 3px solid #333; margin-bottom: 30px;}
+
+/* .design .mockup */
+.design .inner .mockup {width: 80%; margin: 250px auto 0;}
+.design .inner .mockup li {width: 100%; float: left; margin-bottom: 30px;}
+.design .inner .mockup li:nth-child(2) {width: 47.5%; height: 373px; margin-right: 2%;}
+.design .inner .mockup li:nth-child(3) {width: 50.5%; height: 373px;}
+.design .inner .mockup li img {width: 100%; height: 100%;}
+
+/*section.preview*/
+section.preview {width: 100%; overflow: hidden; margin-top: 200px;}
+.preview ul {width: 100%;}
+.preview ul li {float: left; width: 50%; height: 440px;  position: relative; overflow: hidden;}
+.preview ul li img {width: 100%; height: 100%; transition: 0.8s; object-fit: cover;}
+.preview ul li .black {position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: #000; opacity: 0.7;}
+.preview ul li .white {position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgb(235, 235, 235); opacity: 0.5;}
+.preview ul li:hover img {transform: scale(1.1);}
+.preview ul li .txt {color: #fff; text-align: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); opacity: 0.8; z-index: 10;}
+.preview ul li .txt h3 {font-size: 35px;}
+.preview ul li.next .txt {color: rgb(24, 24, 24);}
+.preview ul li:hover .txt h3 {font-size: 45px; transition: all 0.5s;}
+
+/*footer*/
+footer {width: 100%; background: #9769d4; text-align: center; padding: 55px 0;}
+footer p {font-size: 18px; font-family: 'Playfair Display', serif; padding-left: 38px; color: #fff; display: inline-block; position: relative; margin-left: 20px;}
+footer p:before {position: absolute; content: ''; width: 25px; height: 1px; background: #fff; left: 0; top: 50%;}
+
+/*goTop*/
+.topBtn {font-family: 'nanumSquareEB'; font-weight: bold; font-size: 12px; padding: 25px 22px; position: fixed; bottom: 40px; right: 40px; background: #fff; border: 1.5px solid #ccc; display: none; opacity: 0; transition: all 0.3s;}
+.topBtn.on {display: block; opacity: 1;}

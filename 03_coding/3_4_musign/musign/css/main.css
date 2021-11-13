@@ -1,0 +1,286 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Noto+Sans+KR&display=swap');
+
+/*reset*/
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif;}
+.en {font-family: 'handel gothic', sans-serif;}
+.en_s {font-family: 'Dancing Script', cursive;}
+.wrap {position: relative; margin: 0 auto; width: 100%;}
+
+/*header*/
+.innerHeader {max-width: 1720px; height: 110px; line-height: 110px; margin: auto;}
+.innerHeader .logo {float: left;}
+.innerHeader .logo a {display: block; width: 100%; height: 100%;}
+
+/*gnb + sns*/
+.innerHeader .mainMenu {float: right; overflow: hidden; position: relative;}
+span.bar {position: absolute; left: 0; bottom: 40px; width: 0; height: 3px; background: #e7e7e7; transition: all 0.4s;}
+
+/*gnb*/
+.innerHeader .mainMenu .gnb {float: left;}
+.innerHeader .mainMenu .gnb li {float: left;}
+.innerHeader .mainMenu .gnb li a {display: block; width: 100%; height: 100%; padding: 0 10px;}
+
+/*sns*/
+.innerHeader .mainMenu .sns {float: left;}
+.innerHeader .mainMenu .sns li {float: left;}
+.innerHeader .mainMenu .sns li a {display: block; width: 100%; height: 100%; padding: 0 10px;}
+
+/*visual*/
+section.visual {max-width: 1720px; margin: auto; overflow: hidden;}
+section.visual .mainImg {width: 50%; float: left;}
+section.visual .mainImg img {width: 90%;}
+
+section.visual .mainTxt {width: 50%; float: left; margin-top: 180px;}
+section.visual .mainTxt .tit {font-size: 72px;}
+section.visual .mainTxt .txt {padding: 50px 0 0 70px;}
+
+/*타이틀/텍스트/더보기 공통클래스*/
+.tit {font-size: 50px; line-height: 1.2;}
+.tit span {display: block;}
+.tit span b {font-weight: normal;}
+.tit span.en_s {font-size: 22px; font-weight: normal;}
+.tit span.gray {color: #ccc;}
+.txt p {color: #888; line-height: 1.6; margin-bottom: 10px;}
+.txt p b {font-weight: normal;}
+.moreBtn {display: inline-block; padding-left: 45px; color: #333; position: relative; margin-top: 20px; transform: skewX(-15deg) translateX(5px); transition: all 0.15s;}
+.moreBtn:before {position: absolute; content: ''; width: 40px; height: 1px; left: 0; top: 50%; background: #000;}
+.moreBtn:hover, .moreBtn:focus {transform: skewX(0) translateX(0); transition: all 0.3s; font-weight: bold;}
+
+/*section.journal*/
+section.journal {position: relative; padding: 190px 0 120px;}
+section.journal .scroll {text-transform: uppercase; letter-spacing: 5px; font-size: 10px; position: absolute; left: 50%; top: -20px; padding-top: 90px; transform: translateX(-50%); writing-mode:vertical-rl; line-height: 1.2;}
+section.journal .scroll:before {content: ''; position: absolute; height: 75px; width: 1px; background: #333; left: 6px; top: 0;}
+section.journal .box .img {padding-top: 100px;}
+section.journal .box .tit {margin-bottom: 40px;}
+section.journal .box ul {border-top: 1px solid #e6e6e6; padding-top: 40px; overflow: hidden;}
+section.journal .box ul li {margin-bottom: 30px; overflow: hidden;}
+section.journal .box ul li h3 {float: left; width: 22%; font-size: 15px; font-weight: bold;}
+section.journal .box ul li p {float: left; width: 78%; color: #888;}
+section.journal .box .moreBtn {clear: both; margin-left: 22%;}
+
+/*section안에 공통 .inner, box (플로트)*/
+section .inner {width: 1320px; margin: auto; overflow: hidden;}
+section .inner .box {width: 50%; float: left;}
+
+/*section.service*/
+section.service {padding: 190px 0;}
+section.service .inner {}
+section.service .inner .box .img {margin-top: 60px;}
+section.service .inner .box.design {width: 45%; margin-top: -40%; padding-top: 60px; border-top: 1px solid #c4e5ea;}
+section.service .inner .box.design .tit {font-size: 30px; line-height: 1.4; margin-bottom: 20px;}
+
+/*section.customer*/
+section.customer {background: url(../img/img_04.jpg)no-repeat center/cover; padding: 160px; text-align: center;}
+section.customer .tit {color: #fff; font-size: 40px; margin-bottom: 10px;}
+section.customer .txt {color: #777;}
+
+/*section.team*/
+section.team {padding: 190px 0; position: relative;}
+section.team .inner .box.left {text-align: right; padding-right: 80px; box-sizing: border-box;}
+section.team .inner .box .tit {margin-top: 40px;}
+section.team .inner .box .img {margin-top: 100px;}
+section.team .inner .box .txt {margin: 30px; 0;}
+
+/*footer*/
+footer {width: 1320px; margin: 0 auto;}
+footer .top .tit {color: #e6e6e6; font-size: 62px; text-align: center; padding-bottom: 40px;}
+footer .bottom {border-top: 1px solid #e6e6e6; padding: 40px 0 100px;}
+footer .bottom ul {overflow: hidden;}
+footer .bottom ul li {width: 23%; float: left; width: 23%; line-height: 2; color: #aaa; font-size: 12px;}
+footer .bottom ul li:nth-child(1) {width: 31%; font-size: 28px; color: #000; line-height: 1.1;}
+footer .bottom ul li b {color: #333; font-weight: normal;}
+footer .bottom ul li b:nth-child(1) {display: inline-block; margin-bottom: 12px; color: #333; font-size: 14px;}
+
+
+/*circle.svg*/
+.circleBox {display: block; transform: rotate(-90deg);}
+.circleBox .svgAni path {fill: none; stroke: #f5f5f5; stroke-width: 25; stroke-dasharray: 1564; stroke-dashoffset: 0;}
+section.journal .circleBox {position: absolute; right: 13%; top: 100px; z-index: -1; width: 700px;}
+section.team .circleBox {position: absolute; left: 20%; top: -50px; z-index: -1; width: 700px;}
+
+/*-------animation-------------------------*/
+/*svg 애니메이션*/
+.circleBox.motion .svgAni path {animation-name: dash; animation-duration: 1.5s;}
+@keyframes dash {
+	0%{stroke-dashoffset: 1564;}
+	100%{stroke-dashoffset: 0;}
+}
+
+/*공통 .tit 애니메이션*/
+.tit.motion span {overflow: hidden; transform: translate3d(0,0,0) skewY(0deg);}
+.tit.motion span b {display: block; animation: txtAni 1.3s;}
+@keyframes txtAni {
+	0% {opacity: 0;}
+	30% {opacity: 0; transform: translate3d(0,40px,0) skewY(8deg); transform-origin: top left;}
+}
+
+/*.visual .txt 텍스트애니*/
+.txt.motion p {overflow: hidden; transform: translate3d(0,0,0) skewY(0deg);}
+.txt.motion p b {font-weight: normal; display: block; animation: txtAni 1s;}
+
+/*.visual img 애니메이션*/
+.img.motion {position: relative; animation: imgAni 1s;}
+@keyframes imgAni {
+	0% {transform: translateY(50px);}	
+}
+.img.motion:after {content: ''; width: 100%; height: 0; background: #fff; position: absolute; top: 0; left: 0; animation: mask 1.2s;}
+@keyframes mask {
+	0% {height: 90%;}
+}
+
+/*section.service 배경색 변경*/
+body {transition: all 0.4s;}
+body.on {background: #e8fcff; transition: all 0.4s;}
+section.service .img.motion:after {background: #e8fcff;} /*배경색에 맞게 바꿔줌*/
+
+/*menuOpen*/
+.menuOpen button.open {background: none; border: none; position: fixed; right: 0; top: 50%; transform: translateY(-50%); padding: 30px 22px;box-sizing: border-box; z-index: 100}
+.menuOpen button.open:before {content: ''; width: 100%; height: 100%; background: #f5f5f5; position: absolute; right: -100px; top: 0; z-index: -1; transition: all 0.5s;}
+.menuOpen button.open:hover:before, .menuOpen button.open:focus:before {right: 0; cursor: pointer;}
+
+/*menuWrap의 기본 레이아웃*/
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #eee;}
+.menuOpen .menuWrap .tit {color: #ccc; position: absolute; top: 50%; left: 25%; transform: translateY(-50%); font-size: 60px;}
+.menuOpen .menuWrap .tit li a {margin-bottom: 20px; display: inline-block; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover, .menuOpen .menuWrap .tit li a:focus {transform: translateX(30px); color: #333;}
+.menuOpen .menuWrap .tit li a:after {content: '';  width: 0; height: 2px; background: #333; position: absolute; bottom: -5px; transition: all 0.3s;}
+.menuOpen .menuWrap .tit li a:hover:after, .menuOpen .menuWrap .tit li a:focus:after {width: 100%;}
+.menuOpen .menuWrap .close:nth-child(1) {position: absolute; top: 50%; transform: translateY(-50%); left: 30px;}
+.menuOpen .menuWrap .close.en {position: absolute; right: 50px; top: 50px; font-size: 25px; border-bottom: 1px solid #888; color: #888;}
+
+/*.menuWrap 열기*/
+.menuOpen .menuWrap {width: 0; transition: 0s; overflow: hidden; transform: skewY(40deg); opacity: 0;}
+.menuOpen .menuWrap.on {width: 100%; right: 0; transform: skewY(0deg); transition: all 0.5s; opacity: 1;}
+
+/*메뉴 열었을 때 동그라미*/
+.menuOpen .menuWrap.on:before {content: ''; width: 700px; height: 700px; background: #fff; border-radius: 50%; position: absolute; top: 50%; left: 30%; transform: translate(0,-50%);}
+.menuOpen .menuWrap.on:before {animation-name: menuCircle; animation-duration: 1.8s;}
+@keyframes menuCircle {
+	0% {opacity: 0;}
+	40% {opacity: 0; transform: scale(0.5);}
+}
+
+
+/*반응형*/
+/*pc모드 : 1720~1401px*/
+@media screen and (max-width : 1720px) {
+    .innerHeader {max-width: 100%; padding: 0 30px; box-sizing: border-box;}
+    .innerHeader .mainMenu .sns {margin-left: 200px;}
+    section.visual {max-width: 100%; padding: 0 30px; box-sizing: border-box;}
+    section.visual .mainTxt .tit{font-size: 46px;}
+    section.visual .mainTxt .txt {padding: 20px 0 0;}
+}
+
+/*1400px~1001px*/
+@media screen and (max-width : 1400px) {
+    section.visual .mainTxt {margin-top: 100px;}
+    section .inner {width: 100%; padding: 0 30px; box-sizing: border-box;}
+    .img img {width: 100%;}
+    section.journal .scroll {display: none;}
+    section.journal .circleBox {right: -10%;}
+    section.journal .inner .box .img {width: 90%;}
+    section.customer {padding: 160px 0;}
+    section.team .circleBox {left: -1%;}
+    footer {width: 100%; padding: 0 30px; box-sizing: border-box;}
+}
+
+
+/*1000px~768px*/
+@media screen and (max-width : 1000px){
+    .innerHeader {height: 80px; line-height: 80px;}
+    .innerHeader .mainMenu {display: none;}
+    .menuOpen button.open {position: absolute; top: 0; transform: none; padding: 0; width: 70px; height: 80px; line-height: 80px;}
+    .menuOpen button.open img {height: 50px; width: auto;}
+    .menuOpen button.open:before {display: none;}
+    section.visual .mainImg {width: 100%; float: none;}
+    section.visual .mainImg img {width: 100%;}
+    section.visual .maiTxt {width: 100%; float: none; margin-top: 50px;}
+    section .inner .box {width: 100%;}
+    section.journal {padding: 80px 0;}
+    section.journal .inner .box .img {width: 80%; margin: 0 auto;}
+    section.journal .circleBox {right: -10%; text-outline: 200px;}
+    section.service {padding: 80px 0;}
+    section.service .txt {margin-top: 20px}
+    section.service .inner .box .img {width: 90%; margin: 50px auto 0;}
+    section.service .inner .box.design {width: 100%; margin-top: 50px;}
+    section.service .inner .box.design .img {width: 100%; margin: 50px 0 0;}
+    section.service .inner .box .img.motion:after {background: #fff;}
+    section.customer {padding: 120px 0;}
+    section.customer .tit {font-size: 30px;}
+    section.team {padding: 80px 0; overflow: hidden;}
+    section.team .circleBox {left: 15%;}
+    section.team .inner .box .tit {margin-top: 0; clear: both;}
+    section.team .inner .box.left {padding-right: 0; overflow: hidden;}
+    section.team .inner .box.left .moreBtn {float: right; margin-right: 5px;}
+    section.team .inner .box .img {width: 70%; float: right; margin-top: 50px; clear: both;}
+    section.team .inner .box:nth-child(2) .img {width: 100%; margin: 50px 0;}
+    footer .bottom ul li {width: 33.3333%;}
+    footer .bottom ul li:nth-child(1) {width: 100%; margin-bottom: 30px;}
+}
+
+/*767px~*/
+@media screen and (max-width: 767px){
+    body {font-size: 13px;}
+    .innerHeader {height: 60px; line-height: 60px; padding: 0 20px;}
+    .menuOpen button.open {height: 60px; line-height: 60px; width: 52px;}
+    .menuOpen button.open img {height: 38px;}
+    
+    /*공통요소*/
+    section .inner {padding: 0 20px;}
+    .tit {font-size: 30px;}
+    .tit span.en_s {font-size: 18px;}
+    .txt {text-align: justify;}
+    .moreBtn {font-size: 12px;}
+    
+    section.visual {padding: 0 20px;}
+    section.visual .mainTxt {width: 100%;}
+    section.visual .mainTxt .tit {font-size: 31px;}
+    section.journal {padding: 50px 0;}
+    section.journal .circleBox {top: 15%; right: -4%;}
+    section.journal .inner .box .img {width: 100%; margin-bottom: 30px;}
+    section.journal .box .tit {margin-bottom: 20px;}
+    section.journal .box ul {padding-top: 20px;}
+    section.journal .box ul li {margin-bottom: 20px;}
+    section.journal .box ul li h3 {width: 100%; margin-bottom: 10px;}
+    section.journal .box ul li p {font-size: 12px;}
+    section.journal .box .moreBtn {margin-left: 0;}
+    section.service {padding: 50px 0;}
+    section.service .inner .box .img {width: 100%; margin-top: 30px;}
+    section.service .inner .box.design .img.motion:after {background: #e8fcff;}
+	section.service .inner .box.design {padding-top: 50px;}
+	section.service .inner .box.design .tit {font-size: 25px;}
+	section.customer {padding: 80px 20px;}
+	section.customer .tit {font-size: 25px;}
+	section.team {padding: 50px 0;}
+	section.team .circleBox {left: 4%;}
+	section.team .inner .box .txt {margin: 30px 0 10px;}
+	section.team .inner .box .img {margin-top: 30px;}
+	section.team .inner .box:nth-child(2) .img {margin: 30px 0;}
+	footer {padding: 0 20px;}
+	footer .top .tit {font-size: 31px; padding-bottom: 30px;}
+	footer .bottom ul li {width: 100%; margin-bottom: 12px;}
+	footer .bottom ul li:nth-child(1) {font-size: 20px;}
+	footer .bottom ul li b:nth-child(1) {font-size: 13px; margin-bottom: 0;}
+}
+
+/*320px이하*/
+@media screen and (max-width: 320px){
+	body {font-size: 12px;}
+	.tit span.en_s {font-size: 16px;}
+	.menuOpen .menuWrap .tit {font-size: 27px;}
+	section.visual .mainTxt .tit, .tit, .footer .top .tit {font-size: 27px;}
+	section.visual.journal .box ul li h3 {font-size: 14px;}
+	section.service .inner .box.design .tit {font-size: 22px;}
+	.moreBtn {font-size: 11px;}
+}

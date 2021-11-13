@@ -1,0 +1,75 @@
+@charset="UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/*layout*/
+body {background: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: #7e7e7e;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden;}
+
+/*section.visual*/
+section.visual {width: 100; position: relative;}
+section.visual .mainTitle {position: absolute; width: 1200px; left: 50%; top: 20%; transform: translateX(-50%); text-align: center; color: #222;}
+section.visual .mainTitle h2 {font-size: 64px; letter-spacing: -3px; margin-bottom: 10px; text-transform: uppercase;}
+section.visual .mainTitle h2 span {font-size: 50px;}
+section.visual .mainTitle p {font-size: 19px; color: 1b3413;}
+
+/*animation*/
+section.visual .mainTitle {animation-name: ani; animation-duration: 1s;}
+@keyframes ani {
+    0% {top: 30%; opacity: 0;}
+    30% {top: 80%; opacity: 0;}
+}
+
+/*공통inner*/
+.inner {width: 1050px; margin: 0 auto;}
+
+/*section.routine*/
+section.routine {width: 100%; }
+section.routine .inner {padding: 100px 0; overflow: hidden; overflow: hidden;}
+section.routine  .inner .title {text-align: center; color: #1b3413; font-family: 'Nanum Myeongjo', serif;}
+section.routine  .inner .title h2 {font-size: 50px; line-height: 1.4; margin-bottom: 20px;}
+section.routine  .inner .title h2 span {display: block; font-size: 25px; margin-bottom: 20px;}
+section.routine  .inner .title p {font-size: 20px; font-weight: bold; color: #575757; display: inline-block; margin-bottom: 80px; padding: 0 20px; position: relative;}
+/*가상선택자를 이용한 양옆 라인*/
+section.routine  .inner .title p:before {content: ''; width: 2px; height: 18px; background: #ccc; position: absolute; left: 0; top: 50%; margin-top: -9px;}
+section.routine  .inner .title p:after {content: ''; width: 2px; height: 18px; background: #ccc; position: absolute; right: 0; top: 50%; margin-top: -9px;}
+
+section.routine  .inner p.img {width: 50%; float: left;}
+section.routine  .inner p.img img {width: 100%;}
+section.routine  .inner ul {width: 50%; float: right; padding-left: 100px; box-sizing: border-box;}
+section.routine  .inner ul li {margin-bottom: 30px; line-height: 1.4; padding-left: 70px; position: relative;}
+section.routine  .inner ul li:before {content: '1'; position: absolute; left: 0; top: 0; font-size: 50px; font-family: 'Nanum Myeongjo', serif; color: #6f8668;}
+section.routine  .inner ul li:nth-child(2):before {content: '2';}
+section.routine  .inner ul li:nth-child(3):before {content: '3';}
+section.routine  .inner ul li h3 {font-size: 24px;  margin-bottom: 10px; color: #222; font-weight: 500;}
+
+/*problems*/
+section.problems {width: 100%; background: #f9f9f9; padding: 80px 0; text-align-last: center;}
+section.problems .inner .title {width: 100%;}
+section.problems .inner .title h2 {text-transform: uppercase; font-size: 30px; margin-bottom: 10px;}
+section.problems .inner .title p {font-size: 20px; margin-bottom: 20px;}
+section.problems .inner ul {width: 100%; overflow: hidden;}
+section.problems .inner ul li {float: left; width: 25%;}
+section.problems .inner ul li p.icon {margin-bottom: 20px;}
+section.problems .inner ul li p.txt {font-size: 14px;}
+
+/*section.detail*/
+section.detail {width: 100%; padding: 80px 0;}
+section.detail .inner h2 {font-size: 20px; margin-bottom: 15px; color: #333;}
+section.detail table {width: 100%; border-top: 2px solid #ddd;}
+section.detail table td {padding: 12px 20px; font-size: 14px; border-bottom: 1px solid #eee; width: 350px; box-sizing: border-box;}
+section.detail table td.title {background: #f9f9f9; width: 175px; text-align: center; font-size: 15px;}
+
+/*footer*/
+footer {background: #99735f; padding: 30px; text-align: center; font-size: 12px; color: #fff;}

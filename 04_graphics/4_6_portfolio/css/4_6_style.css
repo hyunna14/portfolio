@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gowun+Batang:wght@400;700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@400;700&family=Hahmlet:wght@400&display=swap');
+@font-face {
+    font-family: 'nanumSquareB';
+    src: url(../fonts/NanumSquareB.ttf);
+    font-family: 'nouvelleVague';
+    src: url(../fonts/nouvelle_vague_final.ttf)
+}
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif;  font-size: 16px; font-weight: 400; line-height: 1.6;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.inner {width: 1400px; margin: 0 auto;}
+h2 {font-family: 'Cormorant Garamond'; font-size: 50px; color: #333;}
+.ko {font-family: 'Hahmlet'; font-weight: 400; font-size: 44px;}
+h3 {font-family: 'Cormorant Garamond';}
+p {color: #777;}
+
+/*공통*/
+p.more {font-family: 'nanumSquareB'; font-size: 12px; font-weight: bold; color: #333; display: inline-block; margin-top: 45px;}
+p.more a {display: inline-block; border: 1px solid #777; padding: 14px 28px; background: #fff; letter-spacing: 0.5px;}
+p.more a:hover {color: #c1b94a; border: 1px solid #cfca80;}
+p.num {font-family: 'nouvelleVague'; font-size: 220px; color: #000; line-height: 220px;}
+p.num span {font-family: 'Playfair Display', serif; font-weight: 900;}
+
+/*header*/
+header {width: 100%; position: fixed; padding-top: 4%; z-index: 100; overflow: hidden;}
+.innerHeader {width: 90%; margin: 0 auto; overflow: hidden;}
+.innerHeader .prev {width: 90px; float: left;}
+.innerHeader .prev i {font-size: 65px; color: #9869d4;}
+.innerHeader .menu {float: right; width: 50px; position: relative; padding-bottom: 20px; margin-top: 1.5%;}
+.innerHeader .menu span {width: 100%; height: 5px; display: block; position: absolute; background: #9769d4; border-radius: 2px;}
+.innerHeader .menu span.bar_short {width: 60%; bottom: 0; right: 0;}
+
+/*menu 레이아웃*/
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #cfca80; transition: all 0.8s;}
+.menuOpen .menuWrap .prev {position: absolute; left: 5%; top: 5%;}
+.menuOpen .menuWrap .prev {width: 90px; float: left;}
+.menuOpen .menuWrap .prev i {font-size: 65px; color: #fff;}
+.menuOpen .menuWrap .close {font-size: 50px; position: absolute; top: 5%; right: 5%;}
+.menuOpen .menuWrap .close span {color: #fff; font-weight: bold;}
+.menuOpen .menuWrap ul {width: 100%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);}
+.menuOpen .menuWrap ul li {font-family: 'Playfair Display', serif; font-size: 50px; color: #fff; line-height: 3.2; letter-spacing: 1px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap ul li a {position: relative; background: #cfca80; padding: 0 20px;}
+.menuOpen .menuWrap ul li:after {content: ''; position: absolute; width: 0%; height: 1px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; z-index: -10; transition: all 0.5s;}
+.menuOpen .menuWrap ul li:hover:after {width: 100%;}
+
+/*.menu 열기*/
+.menuOpen .menuWrap {transform: translateX(9999px);}
+.menuOpen .menuWrap.on {transform: translateX(0px);}
+
+/* visual */
+.visual {width: 100%; overflow: hidden;}
+.visual .inner {width: 1400px; height: 720px; margin: 0 auto; position: relative;}
+.visual .inner .slide {width: 60%; position: absolute; left: 52%; transform: translateX(-50%); top: 0;}
+.visual .inner .slide li {width: 100%; float: left;}
+.visual .inner .slide li img {width: 100%;}
+.visual .inner .mainTit {position: absolute; left: 10%; top: 50%; transform: translateY(-50%);}
+.visual .inner .mainTit h2 {font-size: 75px;}
+.visual .inner .mainTit p {margin-left: 5px;}
+
+/* visual animation */
+.visual .inner .mainTit h2.motion {animation-name: slide-up; animation-duration: 0.5s;}
+.visual .inner .mainTit p.motion {animation-name: slide-up; animation-duration: 1s;}
+@keyframes slide-up {
+    0% {transform: translateY(50px); opacity: 0;}
+    100% {transform: translateY(0);}
+}
+
+/* section.intro */
+.intro {width: 100%;}
+.intro .inner {overflow: hidden;}
+.intro .inner .left {width: 35%; float: left; border-right: 1px solid #ddd; padding-left: 15%; box-sizing: border-box;}
+.intro .inner .left li:first-child {margin-bottom: 30px;}
+.intro .inner .left li h3 {font-size: 24px;}
+.intro .inner .left li p {font-size: 14px;}
+.intro .inner .right {width: 55%; margin-left: 10%; float: right; margin-top: -10px;}
+.intro .inner .right h3 {font-size: 36px; margin-bottom: 10px;}
+.intro .inner .right p {font-size: 14px;}
+
+/* intro animation */
+.intro p.motion {animation-name: fade-in; animation-duration: 1s;}
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* .concept */
+.concept {width: 100%; overflow: hidden; position: relative; margin: 250px 0 150px;}
+.howto {width: 100%; position: relative; overflow: hidden;}
+.howto p.img img {width: 100%;}
+.howto h2.mainTit {position: absolute; top: 150px; left: 50%;}
+.howto .txt {position: absolute; right: 0; top: 45%;}
+.howto .img {width: 59%; float: left;}
+.howto .img:after {content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #fff; opacity: 0.3}
+.howto .txtBox_01 {position: absolute; left: 32%; bottom: 20%;}
+.howto .txtBox_01 h2 {margin-bottom: 20px; font-size: 40px;}
+
+/* howto animation */
+.howto .img.motion {animation-name: slide-inL; animation-duration: 1s;}
+@keyframes slide-inL {
+    0% {transform: translateX(-50px);}
+}
+.howto .txt.motion {animation-name: fade-in; animation-duration: 0.8s;}
+@keyframes slide-inR {
+	0% {transform: translateX(50px); opacity: 0;}
+	40% {transform: translateX(50px); opacity: 0;}
+	100% {transform: translateX(0px); opacity: 1;}
+}
+.mindmap {width: 80%; margin: 75px auto 0; overflow: hidden;}
+.mindmap .txt {margin-top: 75px; margin-bottom: 75px;}
+.mindmap .img {width: 100%;}
+.mindmap .img img {width: 100%;}
+.keywordBox {width: 100%; overflow: hidden; margin: 50px auto 0;}
+.keywordBox h3 {width: 20%; float: left; line-height: 1.6; position: relative; margin-right: 5%; padding-left: 30px; box-sizing: border-box; font-size: 24px; padding: 10px 60px; box-sizing: border-box;}
+.keywordBox h3:after {content: ''; width: 1px; height: 100%; position: absolute; right: 0; top: 10%; background: #777;}
+.keywordBox ul li {float: left; margin-right: 120px; color: #333; font-weight: bold;}
+.keywordBox ul li:last-child {margin-right: 0;}
+.keywordBox ul.theme {margin-bottom: 0;}
+.keywordBox ul.theme li {margin-right: 145px;}
+.keywordBox ul {width: 75%; margin-bottom: 20px; float: left;}
+
+/* animation */
+.mindmap .img.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.keywordBox ul li.motion {animation-name: fade-in2;}
+.keywordBox ul li:nth-child(even) {animation-duration: 0.8s;}
+.keywordBox ul li:nth-child(odd) {animation-duration: 1.4s;}
+.keywordBox ul li:nth-child(2), .keywordBox ul li:nth-child(5) {animation-duration: 1.6s;}
+.keywordBox ul li:nth-child(8) {animation-duration: 2s;}
+.keywordBox ul.theme li:nth-child(6) {animation-duration: 2.4s;}
+.keywordBox ul.theme li:nth-child(7) {animation-duration: 1.5s;}
+
+@keyframes fade-in2 {
+	0% {opacity: 0;}
+	30% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+/* .logoDesign  */
+.logoDesign {width: 100%; overflow: hidden; overflow: hidden;}
+.logoDesign h2 {margin-bottom: 75px; font-size: 40px;}
+.logoDesign li .txtBox .tit {font-weight: bold; color: #333; margin-bottom: 50px; position: relative; font-size: 18px;}
+.logoDesign li.top {width: 100%; float: left; margin-bottom: 120px;}
+.logoDesign li.top .img {width: 50%; float: left; box-shadow: 5px 5px 5px rgba(0,0,0,0.3);}
+.logoDesign li.top .img img {width: 100%;}
+.logoDesign li.top .txtBox {width: 30%; margin-left: 15%; margin-top: 120px; float: left;}
+.logoDesign li.top .txtBox .tit:after {content: ''; width: 100px; height: 1px; position: absolute; left: -150px; top: 50%; background: #333;}
+.logoDesign li.bottom .txtBox {width: 30%; float: left; padding-left: 10%}
+.logoDesign li.bottom .txtBox .tit { position: relative;}
+.logoDesign li.bottom .txtBox .tit:after {content: ''; position: absolute; width: 120px; height: 1px; left: -150px; top: 50%; background: #333;}
+.logoDesign li.bottom .color {width: 40%; float: right; display: flex; justify-content: space-around;}
+.logoDesign li.bottom .color li {text-align: center; padding: 80px 40px; border-radius: 70px; overflow: hidden; font-size: 12px; color: #333;}
+.logoDesign li.bottom .color li:nth-child(1) {background: #cfca80;}
+.logoDesign li.bottom .color li:nth-child(2) {background: #9769d4;}
+.logoDesign li.bottom .color li:nth-child(3) {background: #f1f1f1; padding: 80px 30px;}
+
+/* animation */
+.logoDesign li.top .img.motion {animation-name: slide-inL; animation-duration: 0.5s;}
+.logoDesign li .txt.motion {animation-name: fade-in; animation-duration: 0.8s;}
+/* .sketch */
+.sketch {width: 100%; margin-top: 150px; background: #ddd; padding: 120px 0; overflow: hidden;}
+.sketch h2 {margin-bottom: 20px;}
+.sketch ul {width: 100%; display: flex; justify-content: space-between; margin-top: 75px;}
+.sketch ul li {width: 23%;}
+.sketch ul li img {width: 100%;}
+
+/* .sketch - animation */
+.sketch .txt.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.sketch ul li.motion {animation-name: slide-up; animation-duration: 0.5s}
+.sketch ul li:nth-child(2) {animation-duration: 0.8s;}
+.sketch ul li:nth-child(3) {animation-duration: 1.2s;}
+.sketch ul li:nth-child(4) {animation-duration: 1.5s;}
+
+/* .proto */
+.proto_container {width: 100%; overflow: hidden; margin-top: 150px; padding-bottom: 30px;}
+.flow {width: 100%;}
+.flow .txt {margin-top: 20px;}
+.flow .img {margin-top: 50px; width: 100%;}
+.flow .img img {width: 100%;}
+.prototype {width: 100%; margin-top: 120px;}
+.prototype .txt {margin-top: 20px;}
+.prototype ul {width: 100%; display: flex; justify-content: space-between; margin-top: 50px;}
+.prototype ul li {width: 19%;}
+.prototype ul li:nth-child(2n) {margin-top: 100px;}
+.prototype ul li img {width: 100%; box-shadow: 0px 0px 20px rgba(0,0,0,0.3);}
+
+/* animation */
+.flow .txt.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.flow .img.motion {animation-name: slide-inL; animation-duration: 1.2s;}
+.prototype ul li.motion {animation-name: slide-up; animation-duration: 0.6s;}
+.prototype ul li:nth-child(2) {animation-duration: 0.8s;}
+.prototype ul li:nth-child(3) {animation-duration: 1s;}
+.prototype ul li:nth-child(4) {animation-duration: 1.2s;}
+.prototype ul li:nth-child(5) {animation-duration: 1.4s;}
+
+/* .test */
+.test {width: 100%; position: relative; margin: 150px 0;}
+.userTest {width: 100%; overflow: hidden; padding-bottom: 30px;}
+.userTest .txtBox {width: 53%; float: left; margin-top: 20%; margin-right: 5%;}
+.userTest .txtBox h2 {margin-bottom: 20px;}
+.userTest ul {width: 42%; float: right; margin-top: 50px; padding-right: 30px; box-sizing: border-box;}
+.userTest ul li:first-child {margin-bottom: 20px;}
+.userTest ul li img {box-shadow: 0px 0px 10px rgba(0,0,0,0.4); width: 100%;}
+.revise {width: 100%; display: flex; margin-top: 75px;}
+.revise ul {width: 60%; display: flex; justify-content: space-between; margin-right: 5%;}
+.revise ul li {width: 49%; box-shadow: 3px 3px 10px rgba(0,0,0,0.3);}
+.revise ul li img {width: 100%;}
+.revise .txtBox {width: 35%; margin-top: 10%;}
+.revise .txtBox h2 {margin-bottom: 20px;}
+
+/* animation */
+.userTest .txtBox h2.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.userTest .txtBox .txt.motion {animation-name: fade-in; animation-duration: 0.5s;}
+.userTest ul li.motion {animation-name: slide-inR; animation-duration: 0.8s;}
+.userTest ul li:nth-child(2) {animation-duration: 1.5s;}
+.revise ul li.motion {animation-name: slide-up;animation-duration: 0.8s;}
+.revise ul li:nth-child(2) {animation-duration: 1.2s;}
+.revise h2.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.revise .txt.motion {animation-name: fade-in; animation-duration: 1.2s;}
+
+/* .mockup */
+.mockup {width: 100%; margin: 180px 0 150px;}
+.mockup .inner {overflow: hidden;}
+.mockup video {width: 100%; margin: 0 auto;}
+
+/*section.preview*/
+section.preview {width: 100%; overflow: hidden; margin-top: 200px;}
+.preview ul {width: 100%;}
+.preview ul li {float: left; width: 50%; height: 440px;  position: relative; overflow: hidden;}
+.preview ul li img {width: 100%; height: 100%; transition: 0.8s; object-fit: cover;}
+.preview ul li .black {position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: #000; opacity: 0.7;}
+.preview ul li .white {position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgb(235, 235, 235); opacity: 0.5;}
+.preview ul li:hover img {transform: scale(1.1);}
+.preview ul li .txt {color: #fff; text-align: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); opacity: 0.8; z-index: 10;}
+.preview ul li .txt h3 {font-size: 35px;}
+.preview ul li.next .txt {color: rgb(24, 24, 24);}
+.preview ul li:hover .txt h3 {font-size: 45px; transition: all 0.5s;}
+
+/*footer*/
+footer {width: 100%; background: #9769d4; text-align: center; padding: 55px 0;}
+footer p {font-size: 18px; font-family: 'Playfair Display', serif; padding-left: 38px; color: #fff; display: inline-block; position: relative; margin-left: 20px;}
+footer p:before {position: absolute; content: ''; width: 25px; height: 1px; background: #fff; left: 0; top: 50%;}
+
+/*goTop*/
+.topBtn {font-family: 'nanumSquareEB'; font-weight: bold; font-size: 12px; padding: 25px 22px; position: fixed; bottom: 40px; right: 40px; background: #fff; border: 1.5px solid #ccc; display: none; opacity: 0; transition: all 0.3s;}
+.topBtn.on {display: block; opacity: 1;}

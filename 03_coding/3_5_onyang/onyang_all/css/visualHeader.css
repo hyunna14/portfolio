@@ -1,0 +1,224 @@
+/*layout*/
+.wrap {font-family: 'NanumSquare', sans-serif !important; font-size: 18px; width: 100%; position: relative;}
+
+/*header*/
+.scroll-down header {
+    transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up header {
+    transform: none;
+}
+
+header {
+    width: 100%;
+    height: 95px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: transparent; /*#fff;*/
+    transition: all 0.3s;
+}
+header:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.2px;
+    left: 0;
+    top: 95px;
+}
+
+header.on {
+    height: 450px;
+    background: #fff;
+    transition: all 0.5s;
+    border-bottom: 1.2px solid #ddd;
+}
+
+header.on:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.2px;
+    background: #ddd;
+    left: 0;
+    top: 95px;
+}
+
+header.on .innerHeader .logo img:first-child {
+    display: block;
+}
+
+header.on .innerHeader .logo img:first-child {
+    display: block;
+}
+
+header.on .innerHeader .logo img:nth-child(2) {
+    display: none;
+}
+
+header.on .innerHeader nav .gnb {
+    color: #333;
+}
+
+header.on .innerHeader nav .tnb li img:first-child {
+    display: block;
+    margin-top: 35px;
+}
+
+header.on .innerHeader nav .tnb li img:nth-child(2) {
+    display: none;
+}
+
+header.on .innerHeader nav .tnb {
+    color: black;
+}
+
+.innerHeader {
+    width: 1600px;
+    margin: 0 auto;
+    line-height: 95px;
+    transition: all 0.5s;
+}
+.innerHeader .logo {
+    width: 230px;
+    float: left;
+    margin-right: 180px;
+    margin-top: 34px;
+}
+.innerHeader .logo img {
+    width: 100%;
+}
+.innerHeader .logo img:first-child {
+    display: none;
+}
+.innerHeader .logo img:last-child {
+     width: 70%;
+}
+.innerHeader nav .gnb {
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+.innerHeader nav .gnb > li {
+    float: left;
+    width: 180px;
+    height: 100%;
+    position: relative;
+}
+.innerHeader nav .gnb > li a {
+    display: block;
+    text-align: center;
+}
+
+.innerHeader nav .gnb > li:hover {
+    color: #bf9278;
+}
+
+.innerHeader nav .gnb > li:first-child {
+    margin-left: 0;
+}
+
+.innerHeader nav .gnb > li:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    left: 50%;
+    bottom: 0;
+    background: #bf9278;
+    transform: translateX(-50%);
+    transition: all 0.2s;
+}
+.innerHeader nav .gnb > li:hover:after {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+/*gnb depth*/
+.innerHeader nav .gnb > li .inner {
+    display: none;
+    position: absolute;
+    width: 140px;
+    left: 0;
+    top: 100px;
+    font-weight: normal;
+    font-size: 18px;
+}
+.innerHeader nav .gnb > li .inner li {
+    width: 180px;
+    height: 50px;
+    color: #999;
+}
+.innerHeader nav .gnb > li .inner li:hover {
+    color: #333;
+    font-weight: 700;
+}
+.innerHeader nav .gnb > li .inner.on {
+    display: block;
+    transition: all 0.8s;
+}
+
+/*tnb*/
+.innerHeader nav .tnb {
+    float: right;
+    color: white;
+}
+.innerHeader nav .tnb li {
+    float: left;
+    height: 100%;
+}
+.innerHeader nav .tnb li:nth-child(1) {
+    width: 28px;
+}
+.innerHeader nav .tnb li:nth-child(1) img {
+    width: 100%;
+}
+.innerHeader nav .tnb li img:first-child {
+    display: none;
+}
+.innerHeader nav .tnb li:nth-child(2) {
+    font-size: 28px;
+    margin-top: 4px;
+    margin-left: 25px;
+}
+.innerHeader nav .tnb li:nth-child(3) {
+    font-size: 35px;
+    margin-top: 4px;
+    margin-left: 20px;
+}
+
+/*scrolled*/
+header.scrolled {
+    border-bottom: 1.2px solid #ddd;
+    background: #fff;
+    transition: all 0.3s;
+}
+
+header.scrolled:after {
+    background: #ddd;
+}
+
+header.scrolled .innerHeader .logo img:first-child {
+    display: block;
+}
+header.scrolled .innerHeader .logo img:nth-child(2) {
+    display: none;
+}
+header.scrolled .innerHeader nav .gnb {
+    color: #333;
+}
+
+header.scrolled .innerHeader nav .tnb {
+    color: #333;
+}
+
+header.scrolled .innerHeader nav .tnb li img:first-child {
+    display: block;
+    margin-top: 35px;
+}
+header.scrolled .innerHeader nav .tnb li img:nth-child(2) {
+    display: none;
+}

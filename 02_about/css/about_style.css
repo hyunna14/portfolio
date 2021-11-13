@@ -1,0 +1,440 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gowun+Batang:wght@400;700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@400;700&family=Hahmlet:wght@400&display=swap');
+@font-face {
+    font-family: 'nanumSquareB';
+    src: url(../fonts/NanumSquareB.ttf);
+    font-family: 'nouvelleVague';
+    src: url(../fonts/nouvelle_vague_final.ttf)
+}
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif; font-weight: 300; font-size: 1em; color: #777; line-height: 1.6;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.inner {width: 1400px; margin: 0 auto; overflow: hidden; padding-left: 5%; box-sizing: border-box;}
+h2 {font-family: 'Playfair Display', serif; font-size: 50px; color: #333;}
+h2.ko {font-family: 'Hahmlet'; font-weight: 400; font-size: 45px;}
+h3 {font-family: 'Playfair Display', serif; font-size: 35px; color: #333;}
+.titleBox p {color: #777;}
+
+/*공통 - more 버튼*/
+p.more {
+	font-family: 'nanumSquareB'; 
+	font-size: 12px; 
+	font-weight: 900; 
+	color: #333; 
+	display: inline-block;
+}
+
+p.more a {
+	display: block; 
+	border: 1px solid #777; 
+	padding: 14px 28px; 
+	background: #fff;
+}
+
+p.more a:hover {
+	color: #c1b94a; 
+	border: 1px solid #cfca80;
+}
+
+/*header*/
+header {height: 100%; position: fixed; z-index: 100; overflow: hidden; margin-left: 4%; margin-top: 3.5%;}
+.innerHeader {height: 80%; overflow: hidden;}
+.innerHeader .logo {width: 60px; float: left;}
+.innerHeader .logo img {width: 100%;}
+.innerHeader .logo img:first-child {display: none;}
+.innerHeader .menu {width: 52px; position: fixed; right: 4%; top: 5%; padding: 22px 0;}
+.innerHeader .menu span {width: 100%; height: 5px; display: block; position: absolute; background: #fff; border-radius: 2px; right: 0;}
+.innerHeader .menu span.bar_short {width: 60%; bottom: 0;}
+
+/*gnb*/
+nav.gnb {position: fixed; left: 5.5%; top: 46%; transform: translate(-50%);}
+nav.gnb ul {transform: rotate(-90deg); font-family: 'Playfair Display', serif; font-weight: 700; color: #888; height: 55%; display: flex; flex-direction: row-reverse;}
+nav.gnb ul li {float: left; margin-right: 95px; font-size: 20px; transition: all 0.5s;}
+nav.gnb ul li:nth-child(3) {margin-right: 85px;}
+nav.gnb ul li:nth-child(4) {letter-spacing: 1.5px;}
+
+/* 로고 색상 */
+.innerHeader .logo.on img:first-child {display: block;}
+.innerHeader .logo.on img:last-child {display: none;}
+
+/*menu 레이아웃*/
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #cfca80; transition: all 0.8s;}
+.menuOpen .menuWrap .prev {position: absolute; left: 5%; top: 5%;}
+.menuOpen .menuWrap .prev {width: 90px; float: left;}
+.menuOpen .menuWrap .prev i {font-size: 65px; color: #fff;}
+.menuOpen .menuWrap .close {font-size: 50px; position: absolute; top: 5%; right: 5%;}
+.menuOpen .menuWrap .close span {color: #fff; font-weight: bold;}
+.menuOpen .menuWrap ul {width: 100%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);}
+.menuOpen .menuWrap ul li {font-family: 'Playfair Display', serif; font-size: 50px; color: #fff; opacity: 1; line-height: 3.2; letter-spacing: 1px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap ul li a {position: relative; background: #cfca80; padding: 0 20px;}
+.menuOpen .menuWrap ul li:hover {opacity: 1;}
+.menuOpen .menuWrap ul li:after {content: ''; position: absolute; width: 0%; height: 1px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; z-index: -10; transition: all 0.5s;}
+.menuOpen .menuWrap ul li:hover:after {width: 100%;}
+
+/*.menu 열기*/
+.menuOpen .menuWrap {transform: translateX(9999px);}
+.menuOpen .menuWrap.on {transform: translateX(0px);}
+
+/* visual */
+.visual {
+	width: 100%; 
+	position: relative; 
+	background: #9769d4;
+}
+
+.visual video {
+	width: 55%; 
+	margin-left: 25%; 
+	padding: 150px 0; 
+	position: relative; 
+	opacity: 0.7;
+}
+
+.visual .mainTit {
+	position: absolute; 
+	left: 20%; 
+	top: 50%; 
+	transform: translateY(-50%); 
+	color: #fff;
+}
+
+.visual .mainTit h2 {
+	color: #fff;
+	font-size: 80px;
+	font-family: 'Cormorant Garamond';
+}
+
+/*section.profile*/
+section.profile {
+	width: 100%; 
+	position: relative; 
+	overflow: hidden; 
+	margin: 250px 0;
+}
+
+.profile p.img.center {
+	width: 38%; 
+	margin: 0 auto; 
+	z-index: 30;
+}
+
+.profile p.img.left {
+	width: 30%; 
+	position: absolute; 
+	left: 0; 
+	bottom: 0; 
+	z-index: 20;
+}
+
+.profile p.img.right {
+	width: 50%; 
+	position: absolute; 
+	right: -20%; 
+	top: 0; 
+	z-index: 5;
+}
+
+.profile p.img img {
+	width: 100%;
+}
+
+.profile h3 {
+	font-size: 200px; 
+	font-weight: 400;
+	color: #888; 
+	position: absolute; 
+	z-index: 10; 
+	transition: all 2s;
+}
+
+.profile h3.top {
+	top: 0; 
+	right: 0;
+}
+
+.profile h3.bottom {
+	bottom: 0; 
+	right: 0;
+}
+
+/* profile animation */
+.profile h3.top.motion {
+	animation-name: flowR; 
+	animation-duration: 2.5s;
+}
+
+@keyframes flowR {
+	0% {transform: translateX(-500px);}
+	100% {transform: translateX(0px);}
+}
+
+.profile h3.bottom.motion {
+	animation-name: flowL; 
+	animation-duration: 2s;
+}
+
+@keyframes flowL {
+	0% {transform: translateX(500px);}
+	100% {transform: translateX(0px);}
+}
+
+/*section.introd*/
+section.introd {
+	width: 100%; 
+	margin: 180px 0;
+}
+
+.introd .quote_box {
+	text-align: center; 
+	position: relative;
+}
+
+.introd .quote_box .title {
+	font-family: 'Hahmlet'; 
+	color: #333; 
+	font-weight: 400; 
+	font-size: 35px; 
+	margin-bottom: 50px;
+}
+
+.introd .quote_box p {
+	font-size: 16px; 
+	line-height: 1.8;
+}
+
+.introd .quote_box i {
+	position: absolute; 
+	color: #333; 
+	font-size: 35px;
+}
+
+.introd .quote_box .left {
+	left: 10%; 
+	top: 0;
+}
+
+.introd .quote_box .right {
+	right: 11%; 
+	bottom: 0;
+}
+
+/*splitting text animation*/
+.introd .quote_box .title.motion {
+	animation-name: slide-up; 
+	animation-duration: 0.8s;
+}
+
+.introd .quote_box p.motion {
+	animation-name: fade-in;
+	animation-duration: 0.8s;
+}
+
+@keyframes fade-in {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+/*section.skills*/
+section.skills {
+	width: 100%; 
+	background: #f1f1f1;
+	padding: 150px 0;
+}
+
+.skills ul.pie-chart {
+	width: 80%; 
+	overflow: hidden; 
+	margin: 50px auto; 
+	display: flex; 
+	justify-content: space-between; 
+	flex-wrap: wrap;
+}
+
+.skills ul.pie-chart li {
+	position: relative; 
+	width: 200px; 
+	height: 200px; 
+	border-radius: 50%; 
+	transition: 0.3s; 
+	margin-bottom: 50px;
+}
+
+.skills ul.pie-chart li:nth-child(4n) {
+	margin-right: 0;
+}
+
+.skills ul.pie-chart li span.center {
+	background: #f1f1f1;
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	width: 150px; 
+	height: 150px; 
+	border-radius: 50%; 
+	text-align: center; 
+	line-height: 200px; 
+	transform: translate(-50%, -50%); 
+	font-size: 35px; 
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	line-height: 130px;
+}
+
+.skills ul.pie-chart li p {
+	position: absolute; 
+	left: 50%; 
+	bottom: -50px; 
+	transform: translateX(-50%); 
+	color: #333;
+}
+
+.skills ul.more {
+	width: 100%; 
+	overflow: hidden; 
+	padding: 20px 0; 
+	margin-top: 150px;
+}
+
+.skills ul.more li {
+	width: 28%; 
+	float: left; 
+	margin-right: 2%; 
+	padding-left: 4%; 
+	position: relative;
+}
+
+.skills ul.more li:last-child {
+	margin-right: 0;
+}
+
+.skills ul.more li p.img {
+	width: 100%; 
+	position: relative;
+}
+
+.skills ul.more li p.img img {
+	width: 100%;
+}
+
+.skills ul.more li p.img:after {
+	content: ''; 
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	background: #9769d4; 
+	opacity: 0.6;
+}
+
+.skills ul.more li h3 {
+	position: absolute; 
+	left: -20px; 
+	top: 40px; 
+	transform: rotate(-90deg); 
+	font-size: 25px; 
+	font-family: 'Cormorant Garamond';
+}
+
+.skills ul.more li:nth-child(2) h3 {
+	transform: rotate(-90deg) translate(-25px, -25px);
+}
+
+.skills ul.more li:nth-child(3) h3 {
+	transform: rotate(-90deg) translate(-5px, -10px);
+}
+
+.skills ul.more li:after {
+	position: absolute; 
+	content: 'VIEW MORE'; 
+	left: 50%; 
+	top: 50%; 
+	background: 0; 
+	color: #fff;
+	opacity: 0; 
+	transform: translate(-20%, -50%); 
+	font-weight: bold; 
+	cursor: pointer; 
+	transition: 0.3s;
+}
+
+.skills ul.more li:hover:after {
+	opacity: 1;
+}
+
+/* .more animation */
+.skills ul.more li.motion {
+	animation-name: slide-up2; 
+	animation-duration: 0.6s;
+}
+
+.skills ul.more li:nth-child(2) {
+	animation-duration: 0.8s;
+}
+
+.skills ul.more li:nth-child(3) {
+	animation-duration: 1.2s;
+}
+
+@keyframes slide-up2 {
+	0% {transform: translateY(50px);}
+	50% {transform: translateY(-20px);}
+	100% {transform: translateY(0px);}
+}
+
+/*contact*/
+section.contact {width: 100%; margin-bottom: 150px; overflow: hidden;}
+.contact .inner {position: relative; overflow: hidden;}
+.contact .inner h2 {font-size: 150px; padding-top: 30px; position: relative; margin-bottom: 120px;}
+.contact .inner h2.gray {position: absolute; top: -108px; color: #f1f1f1;}
+.contact .inner .top {line-height: 1.6; letter-spacing: 0.5px; position: absolute; left: 65%; top: 120px;}
+.contact .inner .top span {color: #333; font-family: 'Cormorant Garamond'; font-size: 20px; margin-right: 20px;}
+form {width: 100%; overflow: auto; position: relative;}
+form p {width: 63%; float: left;}
+form p:nth-child(1) {width: 35%; margin-right: 2%;}
+form p label {font-family: 'Cormorant Garamond'; font-size: 24px; color: #000;}
+form p input {width: 100%; line-height: 3.5; border:none; border-bottom: 3px solid #000; margin-top: 5px; font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
+form p input:focus {outline: none;}
+form p input#name {margin-bottom: 22px;}
+form p textarea {width: 100%; border:none; border-bottom: 3px solid #000; margin-top: 5px; resize: none; font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 180px;}
+form p textarea:focus {outline: none;}
+form p textarea#message::placeholder{line-height: 10;}
+form button {position: absolute; right: 0; top: 0px; width: 30px; height: 30px; background: none; border: none;}
+form button:before {position: absolute; content: ''; width: 30px; height: 30px; right: 0; top: 0; border-top: 3px solid #000; border-right: 3px solid #000; cursor: pointer;}
+form button:after {position: absolute; content: ''; width: 40px; height: 3px; right: -4px; top: 14px; transform: rotate(-45deg); background: #000; cursor: pointer;}
+
+/*footer*/
+footer {width: 100%; background: #9769d4; text-align: center; padding: 55px 0;}
+footer p {font-size: 18px; font-family: 'Playfair Display', serif; padding-left: 38px; color: #fff; display: inline-block; position: relative; margin-left: 20px;}
+footer p:before {position: absolute; content: ''; width: 25px; height: 1px; background: #fff; left: 0; top: 50%;}
+
+/*goTop*/
+a.topBtn {font-family: 'nanumSquareEB'; font-weight: bold; font-size: 12px; padding: 25px 22px; position: fixed; bottom: 45px; right: 40px; background: #fff; border: 1.5px solid #ccc;}
+
+/*----------애니메이션----------*/
+/*공통*/
+h2.motion {animation-name: slide-up; animation-duration: 1s;}
+.txtBox.motion {animation-name: slide-up; animation-duration: 1s;}
+@keyframes slide-up {
+	0% {opacity: 0; transform: translateY(50px);}
+	100% {opacity: 1; transform: translateY(0px);}
+}
+p.more.motion {animation-name: slide-inL; animation-duration: 1.2s;}
+@keyframes slide-inL {
+	0% {transform: translateX(-50px); opacity: 0;}
+	40% {transform: translateX(-50px); opacity: 0;}
+	100% {transform: translateX(0px);}
+}

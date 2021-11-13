@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UX 디자인 - 맥</title>
+    <link rel="stylesheet" href="css/4_5_style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <!-- script -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/graphc_comn_script.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+            <div class="innerHeader">
+                <a href="../graphic.html#1" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                <a href="#" class="menu">
+                    <span class="bar_long"></span>
+                    <span class="bar_short"></span>
+                    <!--menuOpen-->
+                    <div class="menuOpen">
+                        <div class="menuWrap">
+                            <a href="#" class="close prev">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="close">
+                                <span class="lnr lnr-cross"></span>
+                            </a>
+                            <ul>
+                                <li><a href="../../02_about/about.html">About Me</a></li>
+                                <li><a href="../../03_coding/coding.html">Web Coding</a></li>
+                                <li><a href="../../04_graphics/graphic.html">Graphic Works</a></li>
+                                <li><a href="../../05_NCS/ncs.html">NCS Proccess</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <!-- section.visual -->
+        <section class="visual">
+            <div class="inner">
+                <ul class="slide">
+                    <li><img src="img/slide-1.png" alt="목업 이미지"></li>
+                    <li><img src="img/slide-2.png" alt="목업 이미지"></li>
+                </ul>
+                <div class="mainTit">
+                    <h2 class="animate" data-animate="motion">M.A.C</h2>
+                    <p class="animate" data-animate="motion">메이크업 브랜드 맥의 사이트 리뉴얼 UX 디자인</p>
+                </div>
+            </div>
+        </section>
+        <section class="intro">
+            <div class="inner">
+                <ul class="left">
+                    <li>
+                        <h3>What</h3>
+                        <p class="animate" data-animate="motion">UI/UX 디자인</p>
+                    </li>
+                    <li>
+                        <h3>When</h3>
+                        <p class="animate" data-animate="motion">MAY 2021</p>
+                    </li>
+                </ul>
+                <div class="right">
+                    <h3>MAC</h3>
+                    <p class="animate" data-animate="motion">사용자 경험 관찰 조사를 통해 사이트의 불편한 점을 개선하고<br>디자인을 새롭게 리뉴얼했습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- section.contents -->
+        <section class="contents">
+            <div class="inner">
+                <!-- .persona -->
+                <div class="persona">
+                    <ul class="left">
+                        <li class="animate" data-animate="motion"><img src="img/persona-1.png" alt="페르소나"></li>
+                        <li class="animate" data-animate="motion"><img src="img/persona-2.png" alt="페르소나를 통한 니즈"></li>
+                    </ul>
+                    <div class="right">
+                        <h2 class="ko">페르소나</h2>
+                        <p class="animate" data-animate="motion">시장 동향 조사와 특정 인물 설정을 통해<br>현재 웹사이트의 문제점을 인식하고 사용자 니즈를 분석한 결과,<br>UI의 통일성과 이미지, 폰트의 적절한 크기 등을
+                            개선점으로 발견할 수 있었습니다.</p>
+                    </div>
+                </div>
+                <!-- sketch -->
+                <div class="sketch">
+                    <div class="txtBox">
+                        <h2 class="ko">이미지보드 & 스케치</h2>
+                        <p class="txt animate" data-animate="motion">비슷한 이미지의 이커머스 홈페이지 자료들을 모아 만든<br>이미지 보드를 참고하여 개선점을 적용한 스케치를 그렸습니다.</p>
+                    </div>
+                    <ul class="img_board animate" data-animate="motion">
+                        <li><img src="img/imgboard-1.png" alt="이미지보드1"></li>
+                        <li><img src="img/imgboard-2.png" alt="이미지보드1"></li>
+                    </ul>
+                    <ul class="img_sketch">
+                        <li class="animate" data-animate="motion" id="sketch"><img src="img/sketch-1.png" alt="스케치1"></li>
+                        <li class="animate" data-animate="motion" id="sketch"><img src="img/sketch-2.png" alt="스케치2"></li>
+                        <li class="animate" data-animate="motion" id="sketch"><img src="img/sketch-4.png" alt="스케치4"></li>
+                        <li class="animate" data-animate="motion" id="sketch"><img src="img/sketch-3.png" alt="스케치3"></li>
+                    </ul>
+                </div>
+                <!-- color -->
+                <div class="color">
+                    <ul>
+                        <li>
+                            <p><span>WHITE</span><br>#FFFFFF</p>
+                        </li>
+                        <li>
+                            <p><span>GRAY</span><br>#DDDDDD</p>
+                        </li>
+                        <li>
+                            <p><span>BLACK</span><br>#000000</p>
+                        </li>
+                    </ul>
+                    <div class="txtBox">
+                        <h2 class="animate ko" data-animate="motion">컬러시스템</h2>
+                        <p class="animate" data-animate="motion">컬러가 화려한 사진이 많이 쓰이는 화장품 이커머스 홈페이지 특성상<br>색이 많아 어지럽지 않도록
+                            포인트 컬러 없이 무채색 계열을 사용했습니다.</p>
+                    </div>
+                </div>
+                <!-- .proto -->
+                <div class="proto">
+                    <h2 class="ko">와이어프레임 / 프로토타입</h2>
+                    <p class="txt animate" data-animate="motion">스케치를 바탕으로 와이어프레임과 프로토타입을 제작했습니다.</p>
+                    <p class="img">
+                        <img class="animate" data-animate="motion" src="img/wireframe.png" alt="와이어프레임">
+                        <img class="animate" data-animate="motion" src="img/renewal.png" alt="리뉴얼 프로토타입">
+                    </p>
+                </div>
+                <!-- .mockup -->
+                <div class="mockup">
+                    <img class="animate" data-animate="motion" src="img/mockup.png" alt="목업">
+                </div>
+            </div>
+        </section>
+        <!--section.preview-->
+        <section class="preview">
+            <ul>
+                <li class="prev">
+                    <a href="../4_4_greenpeace/greenpeace.html">
+                        <img src="img/prev.png" alt="그린피스 목업">
+                        <div class="black"></div>
+                        <div class="txt">
+                            <h3>Prev</h3>
+                            <p>그린피스</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="next">
+                    <a href="../4_6_portfolio/portfolio.html">
+                        <img src="img/next.png" alt="포트폴리오 목업">
+                        <div class="white"></div>
+                        <div class="txt">
+                            <h3>Next</h3>
+                            <p>포트폴리오</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- footer -->
+        <footer>
+            <p>Park HyeonA</p>
+        </footer>
+        <!-- topBtn -->
+        <a href="#" class="topBtn">TOP</a>
+    </div>
+</body>
+
+</html>

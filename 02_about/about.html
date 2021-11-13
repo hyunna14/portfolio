@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>내 소개</title>
+    <meta property="og:type" content="website">
+	<meta property="og:url" content="https://hyunna14.github.io/portfolio/02_about/about.html">
+	<meta property="og:title" content="[Portfolio] ABOUT">
+    <meta property="og:site_name" content="박현아의 포트폴리오">
+    <meta property="og:description" content="저를 소개합니다">
+	<link rel="stylesheet" href="css/about_style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<!--script-->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/comn.js"></script>
+	<script src="js/about_script.js"></script>
+	<!--plugin-->
+	<script src="js/scrolla.jquery.min.js"></script>
+	<script src="js/splitting.min.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!--header-->
+		<header>
+			<div class="innerHeader">
+				<h1 class="logo">
+					<a href="../index.html">
+						<img src="img/logo_main.png" alt="메인 로고">
+						<img src="img/logo_white.png" alt="로고 화이트">
+					</a>
+				</h1>
+				<nav class="gnb">
+					<ul class="animate">
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="../03_coding/coding.html">CODING</a></li>
+						<li><a href="../04_graphics/graphic.html">GRAPHIC</a></li>
+						<li><a href="../05_NCS/ncs.html">NCS</a></li>
+					</ul>
+				</nav>
+				<a href="#" class="menu">
+					<span class="bar_long"></span>
+					<span class="bar_short"></span>
+					<!--menuOpen-->
+					<div class="menuOpen">
+						<div class="menuWrap">
+							<a href="#" class="close prev">
+								<i class="fa fa-angle-left" aria-hidden="true"></i>
+							</a>
+							<a href="#" class="close">
+								<span class="lnr lnr-cross"></span>
+							</a>
+							<ul>
+								<li><a href="about.html">About Me</a></li>
+								<li><a href="../03_coding/coding.html">Web Coding</a></li>
+								<li><a href="../04_graphics/graphic.html">Graphic Works</a></li>
+								<li><a href="../05_NCS/ncs.html">NCS Proccess</a></li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+		</header>
+		<!--section.visual-->
+		<section class="visual">
+				<video class="use" autoplay muted loop>
+				<source src="img/video_me.mp4">
+			</video>
+			<div class="mainTit">
+				<h2>ABOUT <span>ME</span></h2>
+				<p>저를 소개합니다</p>
+			</div>
+		</section>
+		<!--section.profile-->
+		<section class="profile">
+			<p class="img left"><img src="img/1_profile-3.png" alt=""></p>
+			<p class="img center"><img src="img/1_profile-1.png" alt="프로필 사진"></p>
+			<p class="img right"><img src="img/1_profile-2.png" alt=""></p>
+			<h3 class="top animate" data-animate="motion">MAKE</h3>
+			<h3 class="bottom animate" data-animate="motion">ONE'S IMPRESSION</h3>
+		</section>
+		<section class="introd">
+			<div class="inner">
+				<div class="quote_box animate" data-animate="motion">
+					<i class="fa fa-quote-left left" aria-hidden="true"></i>
+					<h3 class="title ko animate"  data-animate="motion" data-splitting>
+						도전하는 퍼블리셔 박현아입니다.
+					</h3>
+					<p class="animate" data-animate="motion">웹 디자인은 기업의 얼굴을, 첫인상을 만드는 일이라고 생각합니다.<br>이에 책임감과 자부심을 가지고 웹 퍼블리싱을 하고 싶습니다.<br>문제에 직면할 때마다 끊임없이 도전하고 성취하는 퍼블리셔가 되겠습니다.</p>
+					<i class="fa fa-quote-right right" aria-hidden="true"></i>
+				</div>
+			</div>
+		</section>
+		<section class="skills" id="skill">
+			<div class="inner">
+				<h2 class="animate" data-animate="motion">Skills</h2>
+				<ul class="pie-chart">
+					<li class="pie-chart pie-chart1 animate" data-animate="motion">
+						<span class="center">95%</span>
+						<p>PowerPoint</p>
+					</li>
+					<li class="pie-chart pie-chart2">
+						<span class="center">90%</span>
+						<p>PhotoShop</p>
+					</li>
+					<li class="pie-chart pie-chart3">
+						<span class="center">95%</span>
+						<p>Illustratior</p>
+					</li>
+					<li class="pie-chart pie-chart4">
+						<span class="center">80%</span>
+						<p>Adobe XD</p>
+					</li>
+				</ul>
+				<ul class="pie-chart">
+					<li class="pie-chart pie-chart5">
+						<span class="center">85%</span>
+						<p>HTML 5</p>
+					</li>
+					<li class="pie-chart pie-chart6">
+						<span class="center">80%</span>
+						<p>CSS 3</p>
+					</li>
+					<li class="pie-chart pie-chart7">
+						<span class="center">50%</span>
+						<p>Java Script</p>
+					</li>
+					<li class="pie-chart pie-chart8">
+						<span class="center">75%</span>
+						<p>JQuery</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="inner">
+				<h2 class="gray">CONTACT</h2>
+				<h2>CONTACT</h2>
+				<form action="https://formspree.io/f/mvodjrzp" method="post">
+					<p>
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required placeholder="박현아">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required placeholder="hyunna14@gmail.com"> 
+					</p>
+					<p>
+						<label for="message">Message</label>
+						<textarea name="message" id="message" cols="30" rows="10" minlength="1" maxlength="500" placeholder="내용을 입력해주세요"></textarea>
+					</p>
+					<button></button>
+				</form>
+			</div>
+		</section>
+		<!--footer-->
+		<footer>
+			<p>Park HyeonA</p>
+		</footer>
+		<a href="#" class="topBtn">TOP</a>
+
+	</div>
+</body></html>

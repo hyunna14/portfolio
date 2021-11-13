@@ -1,0 +1,170 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gowun+Batang:wght@400;700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Hahmlet:wght@400&display=swap');
+@font-face {
+    font-family: 'nanumSquareB';
+    src: url(../fonts/NanumSquareB.ttf);
+    font-family: 'nouvelleVague';
+    src: url(../fonts/nouvelle_vague_final.ttf)
+}
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif; font-weight: 400; font-size: 16px;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+h2 {font-family: 'Playfair Display', serif; font-size: 50px; color: #333;}
+h2.ko {font-family: 'Hahmlet'; font-weight: 300; font-size: 45px;}
+h2 span {font-family: 'Hahmlet'; font-weight: 300; font-size: 45px;}
+h3 {font-family: 'Playfair Display', serif; font-size: 35px;}
+p.txt {color: #777;}
+img {object-fit: cover;}
+
+/*공통*/
+p.more {font-family: 'nanumSquareB'; font-size: 12px; font-weight: 900; color: #333; display: inline-block;}
+p.more a {display: block; border: 1px solid #777; padding: 18px 32px; background: #fff;}
+p.more a:hover {color: #c1b94a; border: 1px solid #cfca80;}
+
+/*header*/
+header {width: 100%; position: fixed; padding-top: 4%; z-index: 100; overflow: hidden;}
+.innerHeader {width: 90%; margin: 0 auto; overflow: hidden; line-height: 75px;}
+.innerHeader .prev {width: 90px; float: left;}
+.innerHeader .prev i {font-size: 65px; color: #fff;}
+.innerHeader .menu {float: right; width: 50px; position: relative; padding-bottom: 20px; margin-top: 1.5%;}
+.innerHeader .menu span {width: 100%; height: 5px; display: block; position: absolute; background: #fff; border-radius: 2px;}
+.innerHeader .menu span.bar_short {width: 60%; bottom: 0; right: 0;}
+
+/*menu 레이아웃*/
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #cfca80; transition: all 0.8s;}
+.menuOpen .menuWrap .prev {position: absolute; left: 5%; top: 5%;}
+.menuOpen .menuWrap .prev {width: 90px; float: left;}
+.menuOpen .menuWrap .prev i {font-size: 65px; color: #fff;}
+.menuOpen .menuWrap .close {font-size: 50px; position: absolute; top: 5%; right: 5%;}
+.menuOpen .menuWrap .close span {color: #fff; font-weight: bold;}
+.menuOpen .menuWrap ul {width: 100%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);}
+.menuOpen .menuWrap ul li {font-family: 'Playfair Display', serif; font-size: 50px; color: #fff; opacity: 1; line-height: 3.2; letter-spacing: 1px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap ul li a {position: relative; background: #cfca80; padding: 0 20px;}
+.menuOpen .menuWrap ul li a {position: relative; background: #cfca80; padding: 0 20px;}
+.menuOpen .menuWrap ul li:hover {opacity: 1;}
+.menuOpen .menuWrap ul li:after {content: ''; position: absolute; width: 0%; height: 1px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; z-index: -10; transition: all 0.5s;}
+.menuOpen .menuWrap ul li:hover:after {width: 100%;}
+
+/*.menu 열기*/
+.menuOpen .menuWrap {transform: translateX(9999px);}
+.menuOpen .menuWrap.on {transform: translateX(0px);}
+
+/*.visual*/
+.visual {width: 100%; color: #fff; text-align: center; background: url(../img/visual.jpg)no-repeat top/cover; background-attachment: fixed; background-color: rgba(0,0,0,0.5); position: relative;}
+.visual .black {width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 10; background-image: bottom;}
+.visual .black h2 {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); overflow: hidden; color: #fff;}
+.visual .black h2 span {font-size: 75px; font-family: 'Playfair Display', serif; color: #fff; letter-spacing: 2.5px; font-weight: bold;}
+.visual .black .num {font-size: 18px; padding-bottom: 30px; font-family: 'nanumSquareB'; font-weight: bold; color: #ccc; padding-top: 600px;}
+
+/* 공통 애니메이션*/
+h2.motion {overflow: hidden; transform: translate3d(0,0,0) skewY(0deg);}
+h2.motion span {display: block; animation: txtAni 0.8s;}
+@keyframes txtAni {
+	0% {opacity: 0;}
+	30% {opacity: 0; transform: translate3d(0,40px,0) skewY(8deg); transform-origin: top left;}
+}
+
+/* visual 애니메이션*/
+.visual .num.motion {animation-name: slide-up; animation-duration: 1.5s;}
+@keyframes slide-up {
+    0% {transform: translateY(50px); opacity: 0;}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0px);}
+}
+
+/*section.info*/
+section.info {width: 100%; margin: 250px 0; color: #333; position: relative;}
+.info .inner {width: 1020px; margin: 0 auto;}
+.info .inner h2 {margin-bottom: 80px; letter-spacing: 1.5px;}
+.info .inner ul {width: 100%; display: flex; justify-content: space-between; padding-right: 20px; box-sizing: border-box; margin-bottom: 60px;}
+.info .inner ul li {float: left; width: 258px; font-family: 'Montserrat'; font-size: 18px;}
+.info .inner ul li p.text {font-family: 'Noto Sans KR', sans-serif; font-weight: 700; padding-top: 20px; position: relative; letter-spacing: 1.2px;}
+.info .inner ul li p.text:after {position: absolute; content: ''; width: 100%; height: 2px; background: #333; left: 0; top: 0; margin: 10px 0;}
+.info .inner p.more {margin-top: 45px;}
+
+/* info 애니메이션 */
+.info .inner ul li.motion {animation-name: slide-up; animation-duration: 0.8s;}
+.info .inner ul li:nth-child(2) {animation-duration: 1.2s;}
+.info .inner ul li:nth-child(3) {animation-duration: 1.5s;}
+.info .inner p.txt.motion {animation-name: fade-in; animation-duration: 1.5s;}
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.info .inner p.more.motion {animation-name: slide-in; animation-duration: 2s;}
+@keyframes slide-in {
+    from {transform: translateX(-50px); opacity: 0;}
+    to {transform: translateX(0);}
+}
+
+/*section.contents*/
+section.contents {width: 100%; padding: 150px 0; background: #f1f1f1; position: relative; overflow: hidden;}
+section.contents .inner {width: 1400px; margin: 0 auto; overflow: hidden;}
+section.contents .inner .video {width: 995px; margin: 20px auto 0; box-shadow: 0px 5px 10px rgba(0,0,0,0.15); border-radius: 10px; overflow: hidden;}
+section.contents .inner .video .use {width: 100%;}
+section.contents .inner .displayLine {width: 1000px; box-sizing: border-box; height: 600px; border: 20px solid #333; border-radius: 30px; position: absolute; left: 50%; transform: translateX(-50%); top: 150px;}
+section.contents .img {width: 50%; margin: 150px auto 0; overflow: hidden; box-shadow: 3px 3px 10px rgba(0,0,0,0.15);}
+section.contents .img img {width: 100%;}
+
+/*section.responsive*/
+section.responsive {width: 100%; margin: 150px 0 0; overflow: hidden;}
+.responsive .resp_inner {width: 1400px; margin: 0 auto 150px; overflow: hidden; position: relative; padding-bottom: 150px;}
+.responsive .resp_inner h2 span b {font-family: 'Playfair Display', serif;}
+.responsive .resp_inner p.txt {margin-top: 20px;}
+.responsive .resp_inner .imgList {width: 100%; margin: 80px auto 0;}
+.responsive .resp_inner .imgList li {width: 49%; height: 417px; float: left; margin-bottom: 50px;}
+.responsive .resp_inner .imgList li:first-child {margin-right: 2%;}
+.responsive .resp_inner .imgList li img {width: 100%; height: 100%;}
+.responsive .resp_inner .more {position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);}
+.responsive .resp_inner .more:hover {border: 1px solid #cfca80; color: #cfca80;}
+/* reponsive 애니메이션 */
+.responsive p.txt {overflow: hidden; transform: translate3d(0,0,0) skewY(0deg);}
+.responsive p.txt.motion span {display: block; animation: txtAni 1.5s;}
+.responsive .imgList li.motion {animation-name: slide-inL; animation-duration: 0.8s;}
+@keyframes slide-inL {
+    0% {opacity: 0; transform: translateX(-100px);}
+    50% {opacity: 0;}
+    100% {transform: translateX(0px);}
+}
+.responsive .imgList li:nth-child(2).motion {animation-name: slide-inR; animation-duration: 1s;}
+@keyframes slide-inR {
+    from {opacity: 0; transform: translateX(100px);}
+    to {transform: translateX(0px);}
+}
+.responsive .btn li.motion {animation-name: slide-up; animation-duration: 0.6s;}
+
+/*section.preview*/
+section.preview {width: 100%; overflow: hidden;}
+.preview ul {width: 100%;}
+.preview ul li {float: left; width: 50%; height: 440px;  position: relative; overflow: hidden; color: #fff;}
+.preview ul li.next{color: rgb(24, 24, 24);}
+.preview ul li img {width: 100%; height: 100%; transition: 0.8s;}
+.preview ul li .black {position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: #000; opacity: 0.7;}
+.preview ul li .white {position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgb(235, 235, 235); opacity: 0.5;}
+.preview ul li:hover img {transform: scale(1.1);}
+.preview ul li .txt {text-align: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); opacity: 0.8; z-index: 10;}
+.preview ul li:hover .txt h3 {font-size: 45px; transition: all 0.5s;}
+.preview ul li i {position: absolute; font-size: 55px; left: 50%; top: 50%; transform: translate(-102px, -50%); opacity: 0.8;}
+.preview ul li.next i {transform: translate(70px, -50%);}
+
+/*footer*/
+footer {width: 100%; background: #9769d4; text-align: center; padding: 55px 0;}
+footer p {font-size: 18px; font-family: 'Playfair Display', serif; padding-left: 38px; color: #fff; display: inline-block; position: relative; margin-left: 20px;}
+footer p:before {position: absolute; content: ''; width: 25px; height: 1px; background: #fff; left: 0; top: 50%;}
+
+/*goTop*/
+.topBtn {font-family: 'nanumSquareEB'; font-weight: bold; font-size: 12px; padding: 25px 22px; position: fixed; bottom: 40px; right: 40px; background: #fff; border: 1.5px solid #ccc; display: none; opacity: 0; transition: all 0.3s;}
+.topBtn.on {display: block; opacity: 1;}

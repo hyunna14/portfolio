@@ -1,0 +1,801 @@
+@charset="UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&display=swap');
+
+/*reset*/
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+select::-ms-expand {display:none}
+
+/*layout*/
+.wrap {font-family: 'NanumSquare', sans-serif !important; font-size: 18px;}
+h2 {font-family: 'Noto Serif KR', serif; font-size: 55px; font-weight: 500; color: #333;}
+
+/*header*/
+header{width: 100%; height: 95px; position: fixed; left: 0; top: 0; z-index: 100; border-bottom: 1.2px solid #ddd; background: #fff; transition: all 0.3s;}
+header:after {content: ''; position: absolute; width: 100%; height: 1.2px; background: #ddd; left: 0; top: 95px;}
+header.on {height: 450px; background: #fff; transition: all 0.5s;}
+.innerHeader {width: 1600px; margin: 0 auto; line-height: 95px; transition: all 0.5s;}
+.innerHeader .logo {width: 230px; float: left; margin-right: 180px; background: }
+.innerHeader .logo img {width: 100%;}
+.innerHeader nav .gnb {float: left; font-weight: bold; font-size: 20px;}
+.innerHeader nav .gnb > li {float: left; width: 180px; height: 100%; position: relative;}
+.innerHeader nav .gnb > li a { display: block; text-align: center;}
+.innerHeader nav .gnb > li:hover {color: #bf9278;}
+.innerHeader nav .gnb > li:first-child {margin-left: 0;}
+.innerHeader nav .gnb > li:after {content: ''; position: absolute; width: 0%; height: 4px; left: 50%; bottom: 0; background: #bf9278; transform: translateX(-50%); transition: all 0.2s;}
+.innerHeader nav .gnb > li:hover:after {width: 100%; transition: all 0.3s;}
+
+/*gnb depth*/
+.innerHeader nav .gnb > li .inner {display: none; position: absolute; width: 140px; left: 0; top: 100px; font-weight: normal; font-size: 18px;}
+.innerHeader nav .gnb > li .inner li {width: 180px;  height: 50px; color: #999;}
+.innerHeader nav .gnb > li .inner li:hover {color: #333; font-weight: 700;}
+.innerHeader nav .gnb > li .inner.on {display: block; transition: all 0.8s;}
+
+.innerHeader .logo img:nth-child(2) {
+    display: none;
+}
+
+.scroll-down header {
+    transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up header {
+    transform: none;
+}
+
+/*tnb*/
+.innerHeader nav .tnb {float: right;}
+.innerHeader nav .tnb li {float: left; height: 100%;}
+.innerHeader nav .tnb li:nth-child(1) {width: 28px;}
+.innerHeader nav .tnb li:nth-child(1) img {width: 100%;}
+.innerHeader nav .tnb li:nth-child(2) {font-size: 28px; margin-top: 4px; margin-left: 25px;}
+.innerHeader nav .tnb li:nth-child(3) {font-size: 35px; margin-top: 4px; margin-left: 20px;}
+
+/*program*/
+.program {
+    width: 100%;
+}
+.program .inner {
+    width: 1400px;
+    margin: 0 auto; 
+    padding-top: 90px;
+    padding-bottom: 80px;
+}
+.program .inner h2 {
+    padding: 90px; 
+    text-align: center;
+}
+.program .inner ul { 
+    width: 100%;  
+    overflow: hidden;
+}
+.program .inner ul li {
+    float: left; 
+    width: 22%;
+    margin-right: 3%;  
+}
+.program .inner ul li:last-child {
+    margin-right: 0 auto; 
+}
+.program .inner ul li a {
+    display: block; 
+    overflow: hidden;
+    position: relative;
+}
+.program .inner ul li a p.img {
+    width: 100%;
+    position: relative;
+}
+.program .inner ul li a p.img img {
+    width: 100%;
+}
+.program .inner ul li a p.img:before {
+    content: ''; 
+    width: 0;
+    height: 100%; 
+    position: absolute;
+    background: rgba(191, 117, 75, 0.9);
+    transition: all 0.5s; 
+}
+.program .inner ul li a p.img:hover:before {
+    width: 100%; 
+    transition: all 0.5s;
+}
+.program .inner ul li a p.img:after {
+    content: '유아';
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    border: 1px solid #fff; 
+    transform: translate(-50%,-50%);
+    color: #fff; 
+    padding: 5px 30px;
+    box-sizing: border-box;
+    border-radius: 40px; 
+    opacity: 0; 
+    transition: all 0.5s;
+    font-size: 25px;
+    font-weight: bold;
+}
+.program .inner ul li:nth-child(2) a p.img:after {content: '초등학생';}
+.program .inner ul li:nth-child(3) a p.img:after {content: '청소년';}
+.program .inner ul li:nth-child(4) a p.img:after {content: '가족';}
+.program .inner ul li a p.img:hover:after, .program .inner ul li a p.img {
+    opacity:1 ; transition: all 0.5s;
+}
+.program .inner ul li a p.img img {
+    width: 100%;
+}
+
+/*new*/
+.New {
+    width: 100%; 
+    margin: 100px auto; 
+    position: relative; 
+    text-align: center;
+    background: #f8f8f8;
+}
+.New .inner {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+.New .inner h2 {
+    text-align: center;
+    padding-top: 90px;
+}
+
+.New .inner:before {
+    content: ''; 
+    width: 100%; 
+    height: 300px; 
+    position: absolute; 
+    bottom: -0;left: 0;
+}
+.New .inner ul {width: 100%;}
+.New .inner ul li {
+    outline: none; 
+    margin-top:90px;
+}
+.New .inner ul li .img{
+    transform: scale(0.5); 
+    opacity: 0.15; 
+    transition: 0.3s;
+}
+.New .inner ul li .img img {
+    width: 100%;
+}
+.New .inner ul li .text {
+    text-align: center; 
+    opacity: 0;
+    margin: 30px 0 60px; 
+    color: #000; 
+    font-size: 18px; 
+    line-height: 1.4;
+    width: 100%; 
+    font-weight: 400;
+}
+.New .inner ul li .text h3 {
+    font-size: 25px; 
+    margin-bottom: 20px;
+}
+.New .inner ul li .text p {
+    box-sizing: border-box;
+}
+.New .inner ul li.slick-current + li {
+    z-index:2;
+    position: relative;
+}
+.New .inner ul li.slick-current + li .img {
+    transform: scale(0.8); 
+    opacity: 1;  
+    border-radius: 15px; 
+    overflow: hidden}    
+.New .inner ul li.slick-current + li .text {
+    opacity: 1; 
+    transition: 1.5s;
+}
+.New .inner .slick-arrow {
+    width: 50px; 
+    height: 50px; 
+    background: url(../img/arrow-left.png); 
+    text-indent: -9999px; 
+    border: none;
+    outline: none; 
+    z-index: 10;
+}
+.New .inner .slick-prev {
+    position: absolute; 
+    top: 320px; 
+    left: 200px;
+}
+.New .inner .slick-next {
+    position: absolute; 
+    top: 320px; right: 
+        200px;background: url(../img/arrow-right.png);
+}    
+.New .inner .cruise:before {
+    height: 250px;
+}
+.New .inner .cruise ul li .text {
+    font-size: 22px; 
+    margin: 60px 0 75px;
+}
+
+/*child*/
+.child {
+    width: 100%;
+    height: 100%;
+}
+.child .inner {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 50px;
+    overflow: hidden;
+    margin-bottom:150px;
+}
+.child .inner h2 {
+    text-align: center;
+    margin-bottom: 90px;
+}
+.child .inner > a {
+    display: block;
+    float: right;
+    font-size:20px;
+    font-weight: 400;
+    color: #bf9278;
+    font-family: 'Noto Serif KR', serif;
+}
+
+.child .inner a span {
+    font-size: 12px;
+}
+.child .inner a i {
+    font-size: 25px;
+    margin-left: 15px;
+}
+.child .inner .Box1 {
+    width: 100%;
+    overflow: hidden;
+}
+.child .inner .Box1 .smallBox1 {
+    float: left;
+    
+}
+.child .inner .Box2 li {
+    margin-top: 90px;  
+}
+
+.child .inner .Box2 li a{ position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.child .inner .Box2 li a p.img {
+    width: 100%; 
+    
+}
+.child .inner .Box2 li a p.img img{
+    width: 100%;
+    transition: all 0.5s;
+    margin-bottom: 100px;
+}
+.child .inner .Box2 li a:hover p.img img,.child .inner .Box2 li a:focus p.img img{transform: scale(1.1);transition: all 0.5s;opacity: 0.8}
+.child .inner .Box2 li a p.txt1 {
+    line-height: 1.5;
+    font-size: 22px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 30%; right: -90%;
+    
+    
+}
+.child .inner .Box2 a .txt2{
+    line-height: 1.5;
+    font-size: 22px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 30%; right: -90%;
+}
+    
+}
+.child .inner .Box2 a .txt b {
+    font-size: 25px;
+}
+.child .inner .Box1 .smallBox2{
+    float: right;
+    margin-top: 300px;
+}
+.child .inner .Box1 .smallBox2 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.child .inner .Box1 .smallBox2 a p.img {
+    width: 100%;
+    overflow: hidden;
+}
+.child .inner .Box1 .smallBox2 a p.img img {
+    width: 100%;
+    transition: all 0.5s;}
+
+.child .inner .Box1 .smallBox2 a:hover p.img img,.child .inner .Box1 .smallBox2 a:focus p.img img{transform: scale(1.1);transition: all 0.5s;opacity: 0.8;}
+
+.child .inner .Box1 .smallBox2 a .txt{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 22px;
+    color: #000;
+    font-weight: 100;
+    position: absolute;
+    top: 30%; left:-85%;
+    
+}
+.child .inner .Box1 .smallBox2 a .txt b{
+    font-size: 25px;
+}
+
+/*school*/
+.school {
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+}
+.school .inner {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 150px;
+    overflow: hidden;
+    padding-bottom: 130px;
+}
+.school .inner h2 {
+    text-align: center;
+    margin-bottom: 90px;
+}
+.school .inner >a{
+    float: right;
+    font-size:20px;
+    font-weight: 400;
+    color: #bf9278;
+    font-family: 'Noto Serif KR', serif;
+}
+.school .inner a span {
+    font-size: 12px;
+}
+.school .inner .Box1{
+    width: 100%;
+    overflow: hidden;
+}
+.school .inner .Box1 .smallBox1 {
+    float: right;
+}
+.school .inner .Box2 li{
+    margin-top: 90px;
+}
+.school .inner .Box2 li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.school .inner .Box2 li a p.img {
+    width: 100%;
+   
+}
+.school .inner .Box2 li a p.img img{
+    width: 100%; 
+    transition: all 0.5s;
+    margin-bottom: 100px;
+}
+.school .inner .Box2 li a:hover p.img img,.school .inner .Box2 li a:focus p.img img {transform: scale(1.1);transition: all 0.5s;opacity: 0.8;}
+.school .inner .Box2 a .txt1{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 35%; left: -110%;
+}
+.school .inner .Box2 a .txt2{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 25%; left: -95%}
+
+.school .inner .Box1 .txt b{
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+.school .inner .Box1 .smallBox2{
+    float: left;
+    margin-top: 300px;
+}
+.school .inner .Box1 .smallBox2 a{
+    width: 100%;
+    height: 100%;    
+    display: block;
+    position: relative;
+}
+.school .inner .Box1 .smallBox2 a p.img {
+    width: 100%;
+}
+.school .inner .Box1 .smallBox2 a p.img img{
+    width: 100%;
+    transition: all 0.5s;
+}
+.school .inner .Box1 .smallBox2 a:hover p.img img,.school .inner .Box1 .smallBox2 a:focus p.img img {transform: scale(1.1);transition: all 0.5s;opacity: 0.8;}
+.school .inner .Box1 .smallBox2 a .txt {
+    line-height: 1.5;
+    font-size: 22px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 40%; right: -100%;
+}
+.school .inner .Box1 .smallBox2 a .txt b{
+    font-size: 25px;
+}
+
+/*middle*/
+.middle {
+    width: 100%;
+    height: 100%;
+}
+.middle .inner {
+    width: 1400px;
+    padding-top: 120px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 150px;
+   
+}
+.middle .inner h2 {
+    text-align: center;
+    margin-bottom: 90px;
+}
+.middle .inner >a {
+    display: block;
+    float: right;
+    font-size:20px;
+    font-weight: 400;
+    color: #bf9278;
+    font-family: 'Noto Serif KR', serif;
+}
+.middle .inner a i {
+    font-size: 12px;
+}
+.middle .inner .Box1 {
+    width: 100%;
+    overflow: hidden;
+}
+.middle .inner .Box1 .smallBox1 {
+    float: left;
+    
+}
+.middle .inner .Box2 li {
+    margin-top: 90px;
+}
+
+.middle .inner .Box2 li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+}
+.middle .inner .Box2 li a p.img {
+    width: 100%;
+}
+.middle .inner .Box2 li a p.img img{
+    width: 100%;
+    transition: all 0.5s;
+    margin-bottom: 100px;
+}
+.middle .inner .Box2 li a:hover p.img img,.middle .inner .Box2 li a:focus p.img img {transform: scale(1.1); transition: all 0.5s;opacity: 0.8;}
+.middle .inner .Box2 a .txt1 {
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 30%; right: -110%;
+}
+.middle .inner .Box2 a .txt2{
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 35%; right: -85%;
+}
+.middle .inner .Box2 a .txt b {
+    font-size: 25px;
+}
+.middle .inner .Box1 .smallBox2{
+    float: right;
+    margin-top: 300px;
+}
+.middle .inner .Box1 .smallBox2 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.middle .inner .Box1 .smallBox2 a p.img {
+    width: 100%;
+    overflow: hidden;
+}
+.middle .inner .Box1 .smallBox2 a p.img img {
+    width: 100%;
+    transition: all 0.5s;
+}
+.middle .inner .Box1 .smallBox2 a:hover p.img img,.middle .inner .Box1 .smallBox2 a:focus p.img img {transform: scale(1.1); transition: all 0.5s;opacity: 0.8;}
+.middle .inner .Box1 .smallBox2 a .txt{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 22px;
+    color: #000;
+    font-weight: 100;
+    position: absolute;
+    top: 30%; left:-85%;
+    
+}
+.middle .inner .Box1 .smallBox2 a .txt b{
+    font-size: 25px;
+}
+
+/*week*/
+.week {
+    width: 100%;
+    height: 100%;
+    background: #f8f8f8;
+}
+.week .inner {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 130px;
+    overflow: hidden;
+    padding-bottom: 150px;
+}
+.week .inner h2 {
+    text-align: center;
+    margin-bottom: 90px;
+}
+.week .inner >a{
+    float: right;
+    font-size:20px;
+    font-weight: 400;
+    color: #bf9278;
+    font-family: 'Noto Serif KR', serif;
+}
+.week .inner a i {
+    font-size: 12px;
+}
+.week .inner .Box1{
+    width: 100%;
+    overflow: hidden;
+}
+.week .inner .Box1 .smallBox1 {
+    float: right;
+}
+.week .inner .Box2 li{
+    margin-top: 90px;
+}
+.week .inner .Box2 li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+   
+}
+.week .inner .Box2 li a p.img {
+    width: 100%;
+}
+.week .inner .Box2 li a p.img img{
+    width: 100%;
+    transition: all 0.5s;
+    margin-bottom: 100px;
+}
+.week .inner .Box2 li a:hover p.img img,.week .inner .Box2 li a:focus p.img img {transform: scale(1.1); transition: all 0.5s;opacity: 0.8;}
+.week .inner .Box2 a .txt1{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 30%; left: -100%;
+}
+.week .inner .Box2 a .txt2{
+    text-align: right;
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 30%; left:-100%;
+}
+.week .inner .Box1 .txt b{
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+.week .inner .Box1 .smallBox2{
+    float: left;
+    margin-top: 300px;
+}
+.week .inner .Box1 .smallBox2 a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.week .inner .Box1 .smallBox2 a p.img {
+    width: 100%;
+}
+.week .inner .Box1 .smallBox2 a p.img img{
+    width: 100%;
+    transition: all 0.5s;
+}
+.week .inner .Box1 .smallBox2 a:hover p.img img,.week .inner .Box1 .smallBox2 a:focus p.img img {transform: scale(1.1);transition: all 0.5s; opacity: 0.8;}
+.week .inner .Box1 .smallBox2 a .txt {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 25px;
+    color: #000;
+    font-weight: 100;
+    position: absolute; 
+    top: 40%; right: -100%;
+}
+.week .inner .Box1 .smallBox2 a .txt b{
+    font-size: 25px;
+}
+
+/*goTop*/
+.goTop {
+    position: fixed;
+    right: 50px;
+    bottom: 10%;
+    z-index: 1111;
+}
+.goTop img {width: 60%;}
+
+/*footer*/
+footer {
+    background-color: #bf9278;
+    font-family: "NanumSquare", sans-serif;
+    color: #ebe7e5;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+footer::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ebe7e5;
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+
+footer .inner {
+    width: 1400px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+footer .inner .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 33px 0;
+}
+
+footer .inner .top ul li {
+    float: left;
+}
+
+footer .inner .top ul {
+    overflow: hidden;
+}
+
+footer .inner .top .rule li {
+    padding-right: 45px;
+    position: relative;
+}
+
+footer .inner .top .rule li:first-child::after {
+    content: "";
+    width: 1px;
+    height: 18px;
+    background-color: #ebe7e5;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+footer .inner .top .rule li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+footer .inner .top .sns li {
+    margin-left: 20px;
+}
+
+footer .inner .top .sns li:last-child a img {
+    margin-top: 2px;
+    width: 85%;
+}
+
+footer .inner .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 55px;
+}
+
+footer .inner .bottom .logo {
+    width: 300px;
+}
+
+footer .inner .bottom .logo .img {
+    width: 100%;
+}
+
+footer .inner .bottom .logo .img img {
+    width: 100%;
+}
+
+footer .inner .bottom li .txtBox {
+    width: 1070px;
+}
+
+footer .inner .bottom li .txtBox .info01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+footer .inner .bottom li .txtBox .info01 p:last-child {
+    font-size: 40px;
+}
+
+footer .inner .bottom li .txtBox .info02 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .inner .bottom li .txtBox .info02 .number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .inner .bottom li .txtBox .info02 .number p {
+    padding-right: 28px;
+}
+
+

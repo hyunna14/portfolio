@@ -1,0 +1,225 @@
+@charset="UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap');
+
+/*reset*/
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'NanumSquare', sans-serif !important; font-size: 18px;}
+.wrap {width: 100%;}
+.inner {width: 1440px; margin: 0 auto; overflow: hidden;}
+h2 {font-size: 45px; font-weight: 500; text-align: center; letter-spacing: -2px;}
+
+/*header*/
+header {width: 100%; font-weight: 700; line-height: 110px; z-index: 100; position: fixed; left: 0; top: 0;}
+.innerHeader {width: 1800px; height: 110px; margin: 0 auto; overflow: hidden; transition: all 0.5s;}
+.innerHeader .logo {width: 10%; float: left; margin-right: 15%;}
+.innerHeader .logo a {width: 100%; display: block;}
+.innerHeader .logo a img {width: 100%;}
+.innerHeader .logo a img:last-child {display: none;}
+.innerHeader nav.gnb > ul {width: 40%; font-size: 22px; float: left; margin-right: 15%; color: #fff; overflow: hidden;}
+.innerHeader nav.gnb > ul > li {float: left; margin-right: 35px; position: relative;}
+.innerHeader nav.gnb > ul > li:last-child {margin-right: 0;}
+.innerHeader nav.gnb > ul > li:after {content: ''; position: absolute; width: 0%; height: 4px; background: #2e68b4; left: 50%; bottom: 0; transform: translate(-50%);}
+.innerHeader nav.gnb > ul > li:hover {color: #2e68b4;}
+.innerHeader nav.gnb > ul > li:hover:after, .innerHeader nav ul.gnb li:focus:after  {width: 100%; transition: 0.5s;}
+.innerHeader nav.gnb > ul > li > ul {display: none;}
+
+/*tnb*/
+.innerHeader nav.tnb {width: 20%; float: right; font-size: 15px; font-weight: normal; overflow: hidden; color: #fff;}
+.innerHeader nav.tnb li {float: left; margin-right: 25px; position: relative;}
+.innerHeader nav.tnb li:nth-child(1):after, .innerHeader nav.tnb li:nth-child(2):after, .innerHeader nav.tnb li:nth-child(3):after {content: ''; position: absolute; width: 1px; height: 10px; background: #999; right: -15px; top: 50%; transform: translateY(-50%);}
+.innerHeader nav.tnb li:last-child {margin-right: 0;}
+.innerHeader nav.tnb li .eng {display: inline; padding: 4px 6px; box-sizing: border-box; border: 1px solid #fff; border-radius: 3px; font-size: 13px; font-weight: bold; margin-left: 5px;}
+.innerHeader nav.tnb li a span {font-size: 35px; line-height: 110px;}
+
+/* fixheader */
+header.scrolled {background: #fff;}
+header.scrolled .innerHeader .logo a img:first-child { display: none;}
+header.scrolled .innerHeader .logo a img:last-child { display: block; margin-top: 30px;}
+header.scrolled .innerHeader nav.gnb > ul {color: #000;}
+header.scrolled .innerHeader nav.tnb {color: #000;}
+header.scrolled .innerHeader nav.tnb li .eng {border: 1px solid #000;}
+
+/* header.on */
+.innerHeader.on {height: 200px; transition: all 0.5s;}
+.innerHeader.on {}
+
+
+/*visual*/
+section.visual {width: 100%; position: relative;}
+section.visual li {position: relative; width: 100%;}
+section.visual li img {width: 100%; height: 100vh;}
+section.visual .titleBox {color: #fff; float: left; position: absolute; top: 50%; left: 10%; transform: translateY(-50%);}
+section.visual .titleBox p {font-size: 20px; font-weight: 700; margin-bottom: 20px;}
+section.visual .titleBox h1 {font-size: 70px; letter-spacing: 2px;}
+
+/*section.business*/
+section.business {width: 100%; margin: 150px 0; overflow: hidden;}
+section.business .inner {overflow: visible;}
+section.business .inner .txtBox {text-align: center; margin-bottom: 50px;}
+section.business .inner .txtBox p {margin-top: 20px;}
+section.business .inner ul {width: 100%;}
+section.business .inner ul li {width: 24%; float: left; margin-right: 1%; position: relative;}
+section.business .inner ul li:first-child {margin-left: 1%;}
+section.business .inner ul li:last-child {margin-right: 0;}
+section.business .inner ul li a {display: block; width: 100%; height: 100%; }
+section.business .inner ul li a:hover p.img img, section.business .inner ul li a:focus p.img img {transform: scale(1.1); transition: 1s;}
+section.business .inner ul li a p.img {width: 100%; overflow: hidden; margin-top: 0;}
+section.business .inner ul li a p.img img {width: 100%; transition: all 1s;}
+section.business .inner ul li a p.title {text-align: center; margin-top: 20px;}
+section.business .inner ul li a .txtBox {position: absolute; content: ''; left: 0; top: 0; width: 100%; height: 92.2%; box-sizing: border-box; padding: 120px 48px; color: #fff; text-align: left; background: rgba(4, 64, 153, 0.8); opacity: 0;}
+section.business .inner ul li a:hover .txtBox {opacity: 1; transition: all 0.5s; transition-delay: 0.3s;}
+section.business .inner ul li a .txtBox img {position: absolute;}
+section.business .inner ul li:nth-child(1) a .txtBox img {top: 0%; left: 20%;}
+section.business .inner ul li:nth-child(2) a .txtBox img {top: 44%; left: 18%;}
+section.business .inner ul li:nth-child(3) a .txtBox img {top: 15%; left: 18%;}
+section.business .inner ul li:nth-child(4) a .txtBox img {top: -25%; left: 40%;}
+section.business .inner ul li a:hover .txtBox img {transform: translate(-100px,100px); transition: all 0.5s; transition-delay: 0.2s}
+section.business .inner ul li a .txtBox img {left: -20px; top: 20%;}
+section.business .inner ul li a .txtBox img {left: -20px; bottom:0;}
+section.business .inner ul li a .txtBox img {left: -20px; top: 20%;}
+section.business .inner ul li a .txtBox img {left: -20px; top: 20%;}
+section.business .inner ul li a .txtBox p.tit {font-size: 24px; font-weight: bold; margin-bottom: 30px;}
+section.business .inner ul li a .txtBox p.txt {font-size: 15px; line-height: 1.8;}
+
+/*business animation*/
+section.business .inner .txtBox.motion {animation-name: slide-up; animation-duration: 0.8s;}
+section.business .inner ul li.motion {animation-name: slide-up;}
+section.business .inner ul li:nth-child(1) {animation-duration: 1.2s;}
+section.business .inner ul li:nth-child(2) {animation-duration: 1.5s;}
+section.business .inner ul li:nth-child(3) {animation-duration: 1.8s;}
+section.business .inner ul li:nth-child(4) {animation-duration: 2.1s;}
+
+/*section.news*/
+section.news {width: 100%; background: #f6f6f6; margin-top: 150px;}
+section.news .inner {padding: 200px 0 150px; overflow: visible;}
+section.news .inner h2 {position: relative; margin-bottom: 50px;}
+section.news .inner h2:after {position: absolute; content: ''; width: 1px; height: 120px; background: #8e8e8e; top: -250px; left: 50%;}
+section.news .inner .newsBox {width: 100%; background: #fff; margin-bottom: 10px; padding: 50px; box-sizing: border-box; position: relative; box-shadow: 1px 3px 5px #ddd;}
+section.news .inner .newsBox:hover, section.news .inner .news:focus .news {border: 1px solid #2164bc;}
+section.news .inner .newsBox p.tit {font-size: 25px; font-weight: 500;}
+section.news .inner .newsBox p.time {font-size: 15px; color: #7c7c7c; margin-top: 20px;}
+section.news .inner .newsBox p.info {float: right; text-transform: uppercase; position: absolute; right: 50px; top: 50%; transform: translateY(-50%);}
+section.news .inner .newsBox p.info span.plus {margin-left: 50px; font-size: 30px; color: #aaa;}
+
+/*news animation*/
+section.news .inner h2.motion {animation-name: slide-up; animation-duration: 0.8s;}
+section.news .inner .newsBox.motion {animation-name: slide-up;}
+section.news .inner .newsBox:nth-child(1) {animation-duration: 1.2s;}
+section.news .inner .newsBox:nth-child(2) {animation-duration: 1.5s;}
+section.news .inner .newsBox:nth-child(3) {animation-duration: 1.8s;}
+section.news .inner .newsBox:nth-child(4) {animation-duration: 1.8s;}
+
+/*section.report*/
+section.report {width: 100%; background: url(../img/news.jpg)no-repeat center/cover; background-attachment: fixed; overflow: hidden; margin-bottom: 150px;}
+section.report .inner {width: 100%; height: 600px; position: relative;}
+section.report .inner:before {width: 100%; height: 100%; position: absolute; content: ''; background: rgba(4, 64, 153, 0.8)}
+section.report .inner .txtBox {position: absolute; text-align: center; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #fff;}
+section.report .inner .txtBox p.txt {margin-bottom: 30px}
+section.report .inner .txtBox p.title {font-size: 40px; padding-top: 80px; position: relative;}
+section.report .inner .txtBox p.title:after {content: ''; position: absolute; width: 1px; height: 40px; background: #fff; left: 50%; top: 0;}
+section.report .inner .txtBox p.btn { margin-top: 30px; display: inline-block; padding: 20px 40px;}
+
+/*section.tv*/
+section.tv {width: 100%;}
+section.tv .inner {width: 1120px;}
+section.tv .inner u {float: right; color: #707070; font-size: 15px; margin-right: 10px; margin: 20px ;}
+section.tv .inner iframe {width: 100%; height: 630px; box-shadow: 0 5px 10px rgba(0,0,0,0.7);}
+section.tv .inner ul {width: 90%; margin: 20px auto 0; overflow: hidden;}
+section.tv .inner ul li {float: left;}
+section.tv .inner ul li:first-child {font-size: 20px; font-weight: bold}
+section.tv .inner ul li:last-child {float: right;}
+section.tv .inner ul li span {float: left; margin-right: 10px; font-size: 20px; display: inline-block; font-weight: }
+section.tv .inner ul li p {float: right; line-height: 1.4; padding-left: 20px;}
+
+/*tv animation*/
+section.tv h2.motion {animation-name: slide-up; animation-duration: 0.8s;}
+section.tv .inner.motion {animation: slide-up 1.5s;}
+
+/*section.recruit*/
+section.recruit {width: 100%; padding: 150px 0; overflow: hidden;}
+section.recruit h2 {margin-bottom: 50px;}
+section.recruit .inner {width: 1400px; overflow: hidden;}
+section.recruit .left {width: 49%; float: left; margin-right: 2%; background: #22579b; color: #fff;}
+section.recruit .left ul.num {width: 25%; float: left; background: #1c4e90; overflow: hidden;}
+section.recruit .left ul.num li {width: 100%; height: 100%; padding: 50px 30px; box-sizing: border-box; font-size: 14px; position: relative; border: 1px solid rgba(73, 117, 198, 0.8);}
+section.recruit .left ul.num li span {position: absolute; right: 30px; top: 50%; transform: translateY(-50%); font-size: 30px;}
+section.recruit .left ul.LBox {float: right; width: 75%; height: 50%; padding: 46px 50px; box-sizing: border-box;}
+section.recruit .left ul.LBox li {width: 100%;}
+section.recruit .left ul.LBox li:first-child {margin-bottom: 50px;}
+section.recruit .left ul.LBox li p.square {border: 1.5px solid rgba(117, 157, 230, 0.8); border-radius: 2px; display: inline; padding: 4px 10px; font-size: 14px; letter-spacing: -0.6px}
+section.recruit .left ul.LBox li h3 {font-size: 20px; margin: 20px 0; font-weight: normal;}
+section.recruit .left ul.LBox li span {font-size: 13px; color: #91a7d1;}
+/*recruit.right*/
+section.recruit .right {width: 49%; float: right; position: relative;}
+section.recruit .right p.img {width: 100%;}
+section.recruit .right p.img img {width: 100%;}
+section.recruit .right .txtBox {position: absolute; content: ''; left: 10%; top: 30%; color: #fff; font-weight: 300;}
+section.recruit .right .txtBox p.en {letter-spacing: -0.8px;}
+section.recruit .right .txtBox h3 {font-size: 32px; margin: 15px 0 25px;}
+section.recruit .right .txtBox p.txt {font-size: 17px; line-height: 1.3;}
+
+/*recruit animation*/
+section.recruit h2.motion {animation: slide-up 0.8s;}
+section.recruit .left.motion {animation: slide-up 1.5s;}
+section.recruit .right.motion {animation: slide-up 1.8s;}
+
+/*section.ect*/
+section.btnBox {width: 100%; padding: 150px 0; background: #f6f6f6; position: relative; }
+section.btnBox:after {content: ''; position: absolute; width: 1px; height: 60px; background: #8e8e8e; top: -20px; left: 50%;}
+section.btnBox .inner {width: 1400px;}
+section.btnBox .inner ul {width: 100%;}
+section.btnBox .inner ul li {width: 49%; height: 150px; background: #fff; float: left; padding: 50px; box-sizing: border-box; overflow: hidden; text-align: right; box-shadow: 2px 3px 6px rgba(0,0,0,0.1);}
+.btnBox .inner ul li:nth-child(1), .btnBox .inner ul li:nth-child(3) {margin-right: 2%}
+.btnBox .inner ul li:nth-child(1), .btnBox .inner ul li:nth-child(2) {margin-bottom: 2%}
+.btnBox .inner ul li:hover, section.btnBox .inner .btnBox ul li:focus {border: 1px solid #2164bc;}
+.btnBox .inner ul li h3 {font-size: 24px; font-weight: normal; float: left; line-height: 50px;}
+.btnBox .inner ul li span {float: right; font-size: 30px; padding-left: 100px;}
+.btnBox .inner ul li p {float: right; line-height: 1.5; color: #4a4a4a;}
+.btnBox .inner ul li:nth-child(2) p {line-height: 50px;}
+
+/*ect animation*/
+.btnBox .inner ul li.motion {animation-name: slide-up;}
+.btnBox .inner ul li:nth-child(1) {animation-duration: 0.8s;}
+.btnBox .inner ul li:nth-child(2) {animation-duration: 1.2s;}
+.btnBox .inner ul li:nth-child(3) {animation-duration: 1.5s;}
+.btnBox .inner ul li:nth-child(4) {animation-duration: 1.8s;}
+
+/*footer*/
+footer {width: 100%; background: #2c2c2c; overflow: hidden; font-size: 14px; color: #a0a0a0}
+footer .inner {width: 85%; padding: 70px 0;}
+footer .inner ul {width: 85%; float: left;}
+footer .inner ul:first-child {margin-bottom: 50px;}
+footer .inner ul li {margin-bottom: 20px;}
+footer .inner ul a p {float: right;}
+footer .inner ul a p span {font-size: 18px;}
+footer .inner .site {display: inline-block; width: 12%; font-size: 17px; font-weight: 900; height: 50px; position: relative;}
+footer .inner .site a {position: absolute; left: 0;}
+footer .inner .site a.arrow {right: 0;}
+footer .inner .site:after {content: ''; position: absolute; width: 100%; height: 1px; background: #a0a0a0; right: 0; bottom: 10px;}
+footer .inner .site span {float: right; font-size: 14px; font-weight: 900; margin-right: 10px;}
+
+/*top*/
+p.top {font-family: sans-serif; font-size: 15px; font-weight: 900; padding: 30px 0; text-align: center; color: #fff; background: #272727;}
+p.top i {margin-left: 10px;}
+
+/*animation-공통*/
+/* p.motion {animation-name: slide-up; animation-duration: 1.2s;}
+h1.motion {animation-name: slide-up; animation-duration: 1.8s;}
+h2.motion {animation-name: slide-up; animation-duration: 1.8s;} */
+@keyframes slide-up {
+    0% {opacity: 0;}
+    20% {opacity: 0; transform: translateY(50px);}
+    70% {opacity: 100%; transform: translateY(-5px);}
+}

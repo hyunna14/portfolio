@@ -1,0 +1,318 @@
+:root {
+    /*size*/
+    --title-font-size: 55px;
+    --font-size: 22px;
+    --name-font-size: 18px;
+    --price-font-size: 16px;
+    --num-font-size: 40px;
+    --box-size: 335px;
+    --radius-size: 25px;
+    --padding-size: 19px;
+    --margin-left: 354px;
+
+    /*color*/
+    --color-black: #333;
+    --color-brown: #bf9278;
+    --color-gray: #ebe7e5;
+    --color-light-gray: #f1f1f1;
+    --color-white: #ffffff;
+}
+
+/* layout */
+section.product .inner {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 95px;
+    padding-bottom: 150px;
+}
+
+.title {
+    text-align: center;
+    font-size: var(--title-font-size);
+    font-family: "Noto Serif KR", serif;
+    font-weight: normal;
+    margin: 90px 0;
+}
+
+.list {
+    overflow: hidden;
+    width: 100%;
+}
+
+.list li {
+    float: left;
+    width: var(--box-size);
+    height: var(--box-size);
+    padding-right: var(--padding-size);
+    padding-bottom: var(--padding-size);
+}
+
+.list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.list li a::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    border-radius: var(--radius-size);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.list li a:hover::after {
+    opacity: 0.6;
+}
+
+.list li a:hover .txt {
+    opacity: 1;
+}
+
+.list li a .txt {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 800;
+    color: var(--color-white);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.txt .name {
+    font-size: var(--name-font-size);
+}
+
+.txt .price {
+    font-size: var(--price-font-size);
+    font-weight: normal;
+}
+
+.list li a img {
+    width: var(--box-size);
+    height: var(--box-size);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--radius-size);
+}
+
+button {
+    border: 2px solid var(--color-black);
+    padding: calc(var(--padding-size) / 2) var(--padding-size);
+    border-radius: calc(var(--radius-size) * 2);
+    text-align: center;
+    font-weight: 800;
+    font-size: 22px;
+    font-family: "NanumSquare", sans-serif;
+}
+
+/* book */
+
+section.product .inner .book {
+    position: relative;
+}
+
+section.product .inner .book .list li:nth-child(3),
+section.product .inner .book .list li:nth-child(9) {
+    padding-right: 0;
+}
+
+section.product .inner .book .list li:nth-child(2) {
+    margin-left: var(--margin-left);
+}
+
+section.product .inner .book .list li:nth-child(7) {
+    margin-left: var(--margin-left);
+}
+
+section.product .inner .book button {
+    position: absolute;
+    right: 100px;
+    top: 670px;
+}
+
+/*goods*/
+section.product .inner .goods {
+    position: relative;
+}
+
+section.product .inner .goods .list li:nth-child(3),
+section.product .inner .goods .list li:nth-child(6) {
+    padding-right: 0;
+}
+
+section.product .inner .goods .list li:nth-child(3) {
+    float: right;
+    margin-left: 335px;
+}
+
+section.product .inner .goods .list li:nth-child(4) {
+    margin-left: var(--margin-left);
+}
+
+section.product .inner .goods button {
+    position: absolute;
+    right: 100px;
+    bottom: 150px;
+}
+
+/* objet */
+section.product .inner .objet {
+    position: relative;
+}
+
+section.product .inner .objet .list li:nth-child(5) {
+    margin-left: 354px;
+}
+section.product .inner .objet .list li:nth-child(6),
+section.product .inner .objet .list li:nth-child(9) {
+    padding-right: 0;
+}
+
+section.product .inner .objet .list li:nth-child(9) {
+    margin-left: var(--margin-left);
+}
+
+section.product .inner .objet button {
+    position: absolute;
+    right: 100px;
+    top: 300px;
+}
+
+/*footer*/
+footer {
+    background-color: #bf9278;
+    font-family: "NanumSquare", sans-serif;
+    color: var(--color-gray);
+    font-size: var(--name-font-size);
+    font-weight: 600;
+    position: relative;
+}
+
+footer::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-gray);
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+
+footer .inner {
+    width: 1400px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+footer .inner .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 33px 0;
+}
+
+footer .inner .top ul li {
+    float: left;
+}
+
+footer .inner .top ul {
+    overflow: hidden;
+}
+
+footer .inner .top .rule li {
+    padding-right: 45px;
+    position: relative;
+}
+
+footer .inner .top .rule li:first-child::after {
+    content: "";
+    width: 1px;
+    height: var(--name-font-size);
+    background-color: var(--color-gray);
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+footer .inner .top .rule li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+footer .inner .top .sns li {
+    margin-left: 20px;
+}
+
+footer .inner .top .sns li:last-child a img {
+    margin-top: 2px;
+    width: 85%;
+}
+
+footer .inner .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 55px;
+}
+
+footer .inner .bottom .logo {
+    width: 300px;
+}
+
+footer .inner .bottom .logo .img {
+    width: 100%;
+}
+
+footer .inner .bottom .logo .img img {
+    width: 100%;
+}
+
+footer .inner .bottom li .txtBox {
+    width: 1070px;
+}
+
+footer .inner .bottom li .txtBox .info01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+footer .inner .bottom li .txtBox .info01 p:last-child {
+    font-size: var(--num-font-size);
+}
+
+footer .inner .bottom li .txtBox .info02 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .inner .bottom li .txtBox .info02 .number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .inner .bottom li .txtBox .info02 .number p {
+    padding-right: 28px;
+}
+
+.goTop {
+    position: fixed;
+    right: 50px;
+    bottom: 10%;
+}
+
+.goTop img {width: 60%;}

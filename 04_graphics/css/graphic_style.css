@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gowun+Batang:wght@400;700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@400;700&family=Hahmlet:wght@400&display=swap');
+@font-face {
+    font-family: 'nanumSquareB';
+    src: url(../fonts/NanumSquareB.ttf);
+    font-family: 'nouvelleVague';
+    src: url(../fonts/nouvelle_vague_final.ttf)
+}
+
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none;}
+
+/*layout*/
+body {font-family: 'Noto Sans KR', sans-serif;  font-size: 16px; font-weight: 400; color: #777; line-height: 1.6;}
+.wrap {width: 100%; margin: 0 auto; overflow: hidden; position: relative;}
+.inner {padding-left: 2%; box-sizing: border-box;}
+h2 {font-family: 'Cormorant Garamond'; font-size: 50px; color: #333;}
+h2 span {font-family: 'Hahmlet'; font-weight: 400;}
+h2.ko {font-family: 'Hahmlet'; font-weight: 400; font-size: 44px;}
+h3 {font-family: 'Hahmlet'; font-weight: 700; color: #333; font-size: 20px;}
+.titleBox p {color: #777;}
+
+/*공통*/
+p.more {font-family: 'nanumSquareB'; font-size: 12px; font-weight: bold; color: #333; display: inline-block; margin-top: 45px;}
+p.more a {display: inline-block; border: 1px solid #777; padding: 14px 28px; background: #fff; letter-spacing: 0.5px;}
+p.more a:hover {color: #c1b94a; border: 1px solid #cfca80;}
+p.num {font-family: 'nouvelleVague'; font-size: 220px; color: #000; line-height: 220px;}
+p.num span {font-family: 'Playfair Display', serif; font-weight: 900;}
+
+/*header*/
+header {height: 100%; position: fixed; z-index: 100; overflow: hidden; margin-left: 4%; margin-top: 3.5%;}
+.innerHeader {height: 80%; overflow: hidden;}
+.innerHeader .logo {width: 60px; float: left;}
+.innerHeader .logo img {width: 100%;}
+.innerHeader .logo img:first-child {display: none;}
+.innerHeader .menu {width: 52px; position: fixed; right: 4%; top: 5%; padding: 22px 0;}
+.innerHeader .menu span {width: 100%; height: 5px; display: block; position: absolute; background: #fff; border-radius: 2px; right: 0;}
+.innerHeader .menu span.bar_short {width: 60%; bottom: 0;}
+
+/*gnb*/
+nav.gnb {position: fixed; left: 5.5%; top: 46%; transform: translate(-50%);}
+nav.gnb ul {transform: rotate(-90deg); font-family: 'Playfair Display', serif; font-weight: 700; color: #888; height: 50%; display: flex; flex-direction: row-reverse;}
+nav.gnb ul li {float: left; margin-right: 95px; font-size: 20px; transition: all 0.5s;}
+nav.gnb ul li:nth-child(3) {margin-right: 85px;}
+nav.gnb ul li:nth-child(4) {letter-spacing: 1.5px;}
+
+
+/* 로고 색상 */
+.innerHeader .logo.on img:first-child {display: block;}
+.innerHeader .logo.on img:last-child {display: none;}
+
+/*menu 레이아웃*/
+.menuOpen .menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #cfca80; transition: all 0.8s;}
+.menuOpen .menuWrap .prev {position: absolute; left: 5%; top: 5%;}
+.menuOpen .menuWrap .prev {width: 90px; float: left;}
+.menuOpen .menuWrap .prev i {font-size: 65px; color: #fff;}
+.menuOpen .menuWrap .close {font-size: 50px; position: absolute; top: 5%; right: 5%;}
+.menuOpen .menuWrap .close span {color: #fff; font-weight: bold;}
+.menuOpen .menuWrap ul {width: 100%; text-align: center; position: absolute; top: 50%; transform: translateY(-50%);}
+.menuOpen .menuWrap ul li {font-family: 'Playfair Display', serif; font-size: 50px; color: #fff; opacity: 1; line-height: 3.2; letter-spacing: 1px; position: relative; transition: all 0.3s;}
+.menuOpen .menuWrap ul li a {position: relative; background: #cfca80; padding: 0 20px;}
+.menuOpen .menuWrap ul li:hover {opacity: 1;}
+.menuOpen .menuWrap ul li:after {content: ''; position: absolute; width: 0%; height: 1px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; z-index: -10; transition: all 0.5s;}
+.menuOpen .menuWrap ul li:hover:after {width: 100%;}
+
+/*.menu 열기*/
+.menuOpen .menuWrap {transform: translateX(9999px);}
+.menuOpen .menuWrap.on {transform: translateX(0px);}
+
+/*section.visual*/
+section.visual {width: 100%; background: #9769d4; position: relative;}
+section.visual .img {width: 55%; padding: 120px 25% 130px;}
+section.visual .img:after {position: absolute; content: ''; width: 100%; height: 100%; left: 0; top: 0; background: #9769d4; opacity: 0.4;}
+section.visual .img img {width: 100%;}
+section.visual .mainTit {color: #fff; position: absolute; left: 20%; top: 50%; transform: translateY(-50%);}
+section.visual .mainTit h2 {font-size: 80px; color: #fff; margin-bottom: 15px;}
+section.visual .mainTit h2 span {font-size: 75px;}
+
+/*section.contents*/
+section.contents {width: 100%; padding: 150px 0 150px; overflow: hidden;}
+.contents .inner {width: 1400px; margin: 0 auto; padding-bottom: 30px;}
+.contents ul {width: 100%; overflow: hidden;}
+.contents ul li {width: 40%; float: left; position: relative; margin-top: 250px;}
+.contents ul li .img {width: 100%; transition: all 0.5s;}
+.contents ul li .img img {width: 100%;}
+.contents ul li .txtBox {position: absolute;}
+.contents ul li .txtBox h2 {margin-bottom: 15px;}
+.contents ul li .num {position: absolute; z-index: 10;}
+.contents ul li:nth-child(2n) {float: right;}
+
+.contents ul li:nth-child(1) {margin-top: 0;}
+.contents ul li:nth-child(1) .txtBox {right: -280px; top: 0;}
+.contents ul li:nth-child(1) .num {top: 50%; transform: translateY(-50%); right: -150px; font-size: 290px;}
+.contents ul li:nth-child(2) {margin-top: 250px;}
+.contents ul li:nth-child(2) .txtBox {bottom: -250px; left: 0;}
+.contents ul li:nth-child(2) .num {bottom: -220px; right: 0;}
+.contents ul li:nth-child(3) {width: 52%; margin-top: 150px;}
+.contents ul li:nth-child(3) .txtBox {bottom: -250px; right:0px; text-align: right;}
+.contents ul li:nth-child(3) .num {bottom: -150px; right: -200px; font-size: 280px;}
+.contents ul li:nth-child(4) {width: 45%; margin-top: 620px;}
+.contents ul li:nth-child(4) .txtBox {bottom: -230px; right: 200px; text-align: right;}
+.contents ul li:nth-child(4) .num {bottom: -250px; right: 0; font-size: 240px;}
+.contents ul li:nth-child(5) {width: 37%; margin-top: 390px;}
+.contents ul li:nth-child(5) .txtBox {bottom: 0px; right: -280px;}
+.contents ul li:nth-child(5) .num {bottom: 230px; right: -220px; font-size: 320px;}
+.contents ul li:nth-child(6) {width: 55%; bottom: 0; right: 0; margin-top: 620px;}
+.contents ul li:nth-child(6) .txtBox {text-align: right; bottom: 0; left: -300px;}
+.contents ul li:nth-child(6) .num {left: -490px; bottom: 20px; font-size: 280px; font-family: 'Playfair Display', serif; font-weight: bold;}
+
+/*footer*/
+footer {width: 100%; background: #9769d4; text-align: center; padding: 55px 0;}
+footer p {font-size: 18px; font-family: 'Playfair Display', serif; padding-left: 38px; color: #fff; display: inline-block; position: relative; margin-left: 20px;}
+footer p:before {position: absolute; content: ''; width: 25px; height: 1px; background: #fff; left: 0; top: 50%;}
+
+/*goTop*/
+.topBtn {font-family: 'nanumSquareEB'; font-weight: bold; font-size: 12px; padding: 25px 22px; position: fixed; bottom: 40px; right: 40px; background: #fff; border: 1.5px solid #ccc; display: none; opacity: 0; transition: all 0.3s;}
+.topBtn.on {display: block; opacity: 1;}
+
+/*----------애니메이션----------*/
+/*공통*/
+h2.motion {animation-name: slide-up; animation-duration: 1.2s;}
+.txt.motion {animation-name: slide-up; animation-duration: 1.4s;}
+@keyframes slide-up {
+	0% {opacity: 0; transform: translateY(50px);}
+	100% {opacity: 1; transform: translateY(0px);}
+}
+p.more.motion {animation-name: slide-inL; animation-duration: 1.6s;}
+@keyframes slide-inL {
+	0% {transform: translateX(-50px); opacity: 0;}
+	40% {transform: translateX(-50px); opacity: 0;}
+	100% {transform: translateX(0px);}
+}
+
+/* 반응형 */
+/* 1400px 이하 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
