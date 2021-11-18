@@ -1,3 +1,11 @@
+//svgAni
+$(function(){
+	$('.line_svg').find('path').each(function(i, path){
+		var length = path.getTotalLength();
+		//alert(length);
+		});
+});
+
 //skills-원형차트
 $(window).ready(function(){
     draw(95, '.pie-chart1', '#9769d4');
@@ -25,12 +33,12 @@ $(window).ready(function(){
     $(classname).css({
           "background":"conic-gradient("+colorname+" 0% "+i+"%, #ffffff "+i+"% 100%)"
     });
-  };
-  
-  //scrolla
-  $(function() {
-    $('.animate').scrolla({
-	mobile: true, //모바일버전시 활성화
-	once: false //스크롤시 딱 한번만 하고싶을땐 true
-    });    
-  }); 
+};
+
+//scrolla
+$(function() {
+  $('.animate').scrolla({
+	  mobile: true, //모바일버전시 활성화
+	  once: true //스크롤시 딱 한번만 하고싶을땐 true
+  });    
+});

@@ -247,6 +247,147 @@ section.introd {
 	to {opacity: 1;}
 }
 
+.introd .history {
+	width: 100%;
+	margin-top: 150px;
+	padding: 250px 0 150px;
+	position: relative;
+}
+
+/* .pathBox svg */
+.introd .history .pathBox {
+	width: 100%;
+	text-align: center;
+}
+
+.introd .history .pathBox path {
+	width: 100%;
+	fill: #9769d4;
+	stroke-dasharray: 1922.261474609375;
+	stroke-dashoffset: 1922.261474609375;
+	stroke-width: 1;
+}
+
+/*svg animation*/
+/* .introd .history .pathBox.motion path {
+	animation: line 1.5s;
+}
+
+@keyframes line {
+	0% {stroke-dashoffset: 1922.261474609375;}
+	100% {stroke-dashoffset: 0; fill: #9769d4;}
+} */
+
+.history ol {
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	position: relative;
+	top: -200px;
+}
+
+.history ol > li {
+	padding: 0 20px;
+}
+
+.history ol > li:nth-child(1) span, 
+.history ol > li:nth-child(3) span, 
+.history ol > li:nth-child(4) span {
+	display: inline-block;
+	padding: 10px 0;
+}
+
+.history ol > li:last-child {
+	padding: 0 50px;
+}
+
+.history ol > li:after {
+	position: absolute;
+	content: '';
+	width: 20px;
+	height: 60px;
+	bottom: -80px;
+	background: #9768d4;
+	border-radius: 30px;
+}
+
+.history ol > li i {
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+.history ol > li span {
+	font-size: 14px;
+	color: #999;
+}
+
+.history ol > li ul {
+	position: absolute;
+	margin-top: 150px;
+	text-align: left;
+}
+
+.history ol ul li {
+	position: relative;
+	line-height: 1.8;
+}
+
+.history ol > li:nth-child(4) ul {
+	margin-top: 160px;
+	margin-left: -45px;
+}
+
+
+.history ol ul li:after {
+	position: absolute;
+	content: '';
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #777;
+	top: 40%;
+	left: -15px;
+}
+
+/*animation*/
+.history ol > li.motion {
+	animation-name: list_top;
+	animation-duration: 0.6s;
+}
+
+.history ol > li:nth-child(2) {
+	animation-duration: 1s;
+}
+
+.history ol > li:nth-child(3) {
+	animation-duration: 1.4s;
+}
+
+.history ol > li:nth-child(4) {
+	animation-duration: 1.8s;
+}
+
+.history ol > li:nth-child(5) {
+	animation-duration: 2s;
+}
+
+@keyframes list_top {
+	0% {transform: translateY(50px); opacity: 0;}
+	50% {opacity: 0;}
+}
+
+.history ol > li ul {
+	animation-name: list_bottom;
+	animation-duration: 1s;
+}
+
+@keyframes list_bottom {
+	0% {opacity: 0;}
+	70% {opacity: 0;}
+}
+
 /*section.skills*/
 section.skills {
 	width: 100%; 
@@ -396,43 +537,201 @@ section.skills {
 }
 
 /*contact*/
-section.contact {width: 100%; margin-bottom: 150px; overflow: hidden;}
-.contact .inner {position: relative; overflow: hidden;}
-.contact .inner h2 {font-size: 150px; padding-top: 30px; position: relative; margin-bottom: 120px;}
-.contact .inner h2.gray {position: absolute; top: -108px; color: #f1f1f1;}
-.contact .inner .top {line-height: 1.6; letter-spacing: 0.5px; position: absolute; left: 65%; top: 120px;}
-.contact .inner .top span {color: #333; font-family: 'Cormorant Garamond'; font-size: 20px; margin-right: 20px;}
-form {width: 100%; overflow: auto; position: relative;}
-form p {width: 63%; float: left;}
-form p:nth-child(1) {width: 35%; margin-right: 2%;}
-form p label {font-family: 'Cormorant Garamond'; font-size: 24px; color: #000;}
-form p input {width: 100%; line-height: 3.5; border:none; border-bottom: 3px solid #000; margin-top: 5px; font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
-form p input:focus {outline: none;}
-form p input#name {margin-bottom: 22px;}
-form p textarea {width: 100%; border:none; border-bottom: 3px solid #000; margin-top: 5px; resize: none; font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 180px;}
-form p textarea:focus {outline: none;}
-form p textarea#message::placeholder{line-height: 10;}
-form button {position: absolute; right: 0; top: 0px; width: 30px; height: 30px; background: none; border: none;}
-form button:before {position: absolute; content: ''; width: 30px; height: 30px; right: 0; top: 0; border-top: 3px solid #000; border-right: 3px solid #000; cursor: pointer;}
-form button:after {position: absolute; content: ''; width: 40px; height: 3px; right: -4px; top: 14px; transform: rotate(-45deg); background: #000; cursor: pointer;}
+section.contact {
+	width: 100%; 
+	margin-bottom: 150px; 
+	overflow: hidden;
+}
+
+.contact .inner {
+	position: relative; 
+	overflow: hidden;
+}
+
+.contact .inner h2 {
+	font-size: 150px; 
+	padding-top: 30px; 
+	position: relative;
+	margin-bottom: 120px;
+}
+
+.contact .inner h2.gray {
+	position: absolute; 
+	top: -108px; 
+	color: #f1f1f1;
+}
+
+.contact .inner .top {
+	line-height: 1.6; 
+	letter-spacing: 0.5px; 
+	position: absolute; 
+	left: 65%; 
+	top: 120px;
+}
+
+.contact .inner .top span {
+	color: #333; 
+	font-family: 'Cormorant Garamond'; 
+	font-size: 20px; 
+	margin-right: 20px;
+}
+
+form {
+	width: 100%; 
+	overflow: auto; 
+	position: relative;
+}
+
+form p {
+	width: 63%; 
+	float: left;
+}
+
+form p:nth-child(1) {
+	width: 35%; 
+	margin-right: 2%;
+}
+
+form p label {
+	font-family: 'Cormorant Garamond'; 
+	font-size: 24px; 
+	color: #000;
+}
+
+form p input {
+	width: 100%; 
+	line-height: 3.38; 
+	border: none; 
+	border-bottom: 3px solid #000; 
+	margin-top: 5px; 
+	font-size: 16px; 
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+form p input:focus {
+	outline: none;
+}
+
+form p input#name {
+	margin-bottom: 22px;
+}
+
+form p textarea {
+	width: 100%; 
+	border: none; 
+	border-bottom: 3px solid #000; 
+	margin-top: 20px; 
+	resize: none; 
+	font-size: 16px; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	height: 160px;
+}
+
+form p textarea:focus {
+	outline: none;
+}
+
+form p textarea#message::placeholder {
+	line-height: 10;
+}
+
+form button {
+	position: absolute; 
+	right: 0; 
+	top: 0px; 
+	width: 30px; 
+	height: 30px; 
+	background: none; 
+	border: none;
+}
+
+form button:before {
+	position: absolute; 
+	content: ''; 
+	width: 30px; 
+	height: 30px; 
+	right: 0; 
+	top: 0; 
+	border-top: 3px solid #000; 
+	border-right: 3px solid #000; 
+	cursor: pointer;
+}
+
+form button:after {
+	position: absolute; 
+	content: ''; 
+	width: 40px; 
+	height: 3px; 
+	right: -4px; 
+	top: 14px; 
+	transform: rotate(-45deg); 
+	background: #000; 
+	cursor: pointer;
+}
 
 /*footer*/
-footer {width: 100%; background: #9769d4; text-align: center; padding: 55px 0;}
-footer p {font-size: 18px; font-family: 'Playfair Display', serif; padding-left: 38px; color: #fff; display: inline-block; position: relative; margin-left: 20px;}
-footer p:before {position: absolute; content: ''; width: 25px; height: 1px; background: #fff; left: 0; top: 50%;}
+footer {
+	width: 100%; 
+	background: #9769d4; 
+	text-align: center; 
+	padding: 55px 0;
+}
+
+footer p {
+	font-size: 18px; 
+	font-family: 'Playfair Display', serif; 
+	padding-left: 38px; 
+	color: #fff; 
+	display: inline-block; 
+	position: relative; 
+	margin-left: 20px;
+}
+
+footer p:before {
+	position: absolute; 
+	content: ''; 
+	width: 25px; 
+	height: 1px; 
+	background: #fff; 
+	left: 0; 
+	top: 50%;
+}
 
 /*goTop*/
-a.topBtn {font-family: 'nanumSquareEB'; font-weight: bold; font-size: 12px; padding: 25px 22px; position: fixed; bottom: 45px; right: 40px; background: #fff; border: 1.5px solid #ccc;}
+a.topBtn {
+	font-family: 'nanumSquareEB'; 
+	font-weight: bold; 
+	font-size: 12px;
+	padding: 25px 22px; 
+	position: fixed; 
+	bottom: 45px; 
+	right: 40px; 
+	background: #fff; 
+	border: 1.5px solid #ccc;
+}
 
 /*----------애니메이션----------*/
 /*공통*/
-h2.motion {animation-name: slide-up; animation-duration: 1s;}
-.txtBox.motion {animation-name: slide-up; animation-duration: 1s;}
+h2.motion {
+	animation-name: slide-up; 
+	animation-duration: 1s;
+}
+
+.txtBox.motion {
+	animation-name: slide-up; 
+	animation-duration: 1s;
+}
+
 @keyframes slide-up {
 	0% {opacity: 0; transform: translateY(50px);}
 	100% {opacity: 1; transform: translateY(0px);}
 }
-p.more.motion {animation-name: slide-inL; animation-duration: 1.2s;}
+
+p.more.motion {
+	animation-name: slide-inL; 
+	animation-duration: 1.2s;
+}
+
 @keyframes slide-inL {
 	0% {transform: translateX(-50px); opacity: 0;}
 	40% {transform: translateX(-50px); opacity: 0;}
