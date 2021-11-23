@@ -78,11 +78,6 @@ $(function(){
 	});
 });
 
-//splitting
-$(function(){
-    Splitting();
-});
-
 //scrolla
 $(function() {
     $('.animate').scrolla({

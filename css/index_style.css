@@ -1062,18 +1062,18 @@ section.ncs p.img:hover:after {
 footer {
 	width: 100%; 
 	background: #9769d4; 
-	text-align: center; 
-	padding: 55px 0;
+	text-align: center;
 }
 
 footer p {
-	font-size: 18px; 
-	font-family: 'Playfair Display', serif;
-	padding-left: 38px; 
+	font-size: 1.2em; 
+	font-family: 'Playfair Display', serif; 
+	padding-left: 2em; 
 	color: #fff; 
-	display: inline-block;
+	display: inline-block; 
 	position: relative; 
 	margin-left: 20px;
+	padding: 2.5em;
 }
 
 footer p:before {
@@ -1090,8 +1090,8 @@ footer p:before {
 .topBtn {
 	font-family: 'nanumSquareEB'; 
 	font-weight: bold; 
-	font-size: 12px; 
-	padding: 25px 22px; 
+	font-size: 0.8em; 
+	padding: 1.8em 1.6em; 
 	position: fixed; 
 	bottom: 40px; 
 	right: 40px; 
@@ -1100,6 +1100,7 @@ footer p:before {
 	display: none; 
 	opacity: 0; 
 	transition: all 0.3s;
+	z-index: 100;
 }
 
 .topBtn.on {
@@ -1208,8 +1209,7 @@ p.more.motion {
 		box-sizing: border-box;
 	}
 
-
-	nav.gnb {
+	nav.gnb ul {
 		display: none;
 	}
 

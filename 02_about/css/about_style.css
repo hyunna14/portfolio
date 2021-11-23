@@ -194,7 +194,7 @@ section.profile {
 /*section.introd*/
 section.introd {
 	width: 100%; 
-	margin: 180px 0;
+	margin-top: 180px;
 }
 
 .introd .quote_box {
@@ -248,35 +248,18 @@ section.introd {
 }
 
 .introd .history {
-	width: 100%;
-	margin-top: 150px;
+	width: 90%;
+	margin: 150px auto 0;
 	padding: 250px 0 150px;
 	position: relative;
 }
 
-/* .pathBox svg */
-.introd .history .pathBox {
-	width: 100%;
-	text-align: center;
+.introd .history .line {
+	width: 100%; 
+	height: 35px; 
+	border: 3px solid #9769d4; 
+	border-radius: 30px;
 }
-
-.introd .history .pathBox path {
-	width: 100%;
-	fill: #9769d4;
-	stroke-dasharray: 1922.261474609375;
-	stroke-dashoffset: 1922.261474609375;
-	stroke-width: 1;
-}
-
-/*svg animation*/
-/* .introd .history .pathBox.motion path {
-	animation: line 1.5s;
-}
-
-@keyframes line {
-	0% {stroke-dashoffset: 1922.261474609375;}
-	100% {stroke-dashoffset: 0; fill: #9769d4;}
-} */
 
 .history ol {
 	width: 80%;
@@ -297,10 +280,6 @@ section.introd {
 .history ol > li:nth-child(4) span {
 	display: inline-block;
 	padding: 10px 0;
-}
-
-.history ol > li:last-child {
-	padding: 0 50px;
 }
 
 .history ol > li:after {
@@ -404,7 +383,7 @@ section.skills {
 	flex-wrap: wrap;
 }
 
-.skills ul.pie-chart li {
+.skills .pie-chart li {
 	position: relative; 
 	width: 200px; 
 	height: 200px; 
@@ -413,11 +392,11 @@ section.skills {
 	margin-bottom: 50px;
 }
 
-.skills ul.pie-chart li:nth-child(4n) {
+.skills .pie-chart li:nth-child(4n) {
 	margin-right: 0;
 }
 
-.skills ul.pie-chart li span.center {
+.skills .pie-chart li .center {
 	background: #f1f1f1;
 	position: absolute; 
 	top: 50%; 
@@ -426,15 +405,14 @@ section.skills {
 	height: 150px; 
 	border-radius: 50%; 
 	text-align: center; 
-	line-height: 200px; 
+	line-height: 9rem; 
 	transform: translate(-50%, -50%); 
-	font-size: 35px; 
+	font-size: 2rem; 
 	font-family: 'Playfair Display', serif;
 	font-weight: bold;
-	line-height: 130px;
 }
 
-.skills ul.pie-chart li p {
+.skills .pie-chart li p {
 	position: absolute; 
 	left: 50%; 
 	bottom: -50px; 
@@ -442,14 +420,14 @@ section.skills {
 	color: #333;
 }
 
-.skills ul.more {
+.skills .more {
 	width: 100%; 
 	overflow: hidden; 
 	padding: 20px 0; 
 	margin-top: 150px;
 }
 
-.skills ul.more li {
+.skills .more li {
 	width: 28%; 
 	float: left; 
 	margin-right: 2%; 
@@ -457,20 +435,20 @@ section.skills {
 	position: relative;
 }
 
-.skills ul.more li:last-child {
+.skills .more li:last-child {
 	margin-right: 0;
 }
 
-.skills ul.more li p.img {
+.skills .more li p.img {
 	width: 100%; 
 	position: relative;
 }
 
-.skills ul.more li p.img img {
+.skills .more li p.img img {
 	width: 100%;
 }
 
-.skills ul.more li p.img:after {
+.skills .more li p.img:after {
 	content: ''; 
 	width: 100%; 
 	height: 100%; 
@@ -481,7 +459,7 @@ section.skills {
 	opacity: 0.6;
 }
 
-.skills ul.more li h3 {
+.skills .more li h3 {
 	position: absolute; 
 	left: -20px; 
 	top: 40px; 
@@ -490,15 +468,15 @@ section.skills {
 	font-family: 'Cormorant Garamond';
 }
 
-.skills ul.more li:nth-child(2) h3 {
+.skills .more li:nth-child(2) h3 {
 	transform: rotate(-90deg) translate(-25px, -25px);
 }
 
-.skills ul.more li:nth-child(3) h3 {
+.skills .more li:nth-child(3) h3 {
 	transform: rotate(-90deg) translate(-5px, -10px);
 }
 
-.skills ul.more li:after {
+.skills .more li:after {
 	position: absolute; 
 	content: 'VIEW MORE'; 
 	left: 50%; 
@@ -512,21 +490,21 @@ section.skills {
 	transition: 0.3s;
 }
 
-.skills ul.more li:hover:after {
+.skills .more li:hover:after {
 	opacity: 1;
 }
 
 /* .more animation */
-.skills ul.more li.motion {
+.skills .more li.motion {
 	animation-name: slide-up2; 
 	animation-duration: 0.6s;
 }
 
-.skills ul.more li:nth-child(2) {
+.skills .more li:nth-child(2) {
 	animation-duration: 0.8s;
 }
 
-.skills ul.more li:nth-child(3) {
+.skills .more li:nth-child(3) {
 	animation-duration: 1.2s;
 }
 
@@ -673,18 +651,18 @@ form button:after {
 footer {
 	width: 100%; 
 	background: #9769d4; 
-	text-align: center; 
-	padding: 55px 0;
+	text-align: center;
 }
 
 footer p {
-	font-size: 18px; 
+	font-size: 1.2em; 
 	font-family: 'Playfair Display', serif; 
-	padding-left: 38px; 
+	padding-left: 2em; 
 	color: #fff; 
 	display: inline-block; 
 	position: relative; 
 	margin-left: 20px;
+	padding: 2.5em;
 }
 
 footer p:before {
@@ -698,11 +676,11 @@ footer p:before {
 }
 
 /*goTop*/
-a.topBtn {
+.topBtn {
 	font-family: 'nanumSquareEB'; 
 	font-weight: bold; 
-	font-size: 12px;
-	padding: 25px 22px; 
+	font-size: 0.8em; 
+	padding: 1.8em 1.6em; 
 	position: fixed; 
 	bottom: 45px; 
 	right: 40px; 
@@ -736,4 +714,212 @@ p.more.motion {
 	0% {transform: translateX(-50px); opacity: 0;}
 	40% {transform: translateX(-50px); opacity: 0;}
 	100% {transform: translateX(0px);}
+}
+
+/* 반응형 */
+/* 1401px ~ 1720px */
+@media screen and (max-width: 1720px){
+	.inner {
+		width: 90%;
+	}
+
+	.profile h3 {
+		font-size: 120px;
+	}
+}
+
+/* 1001px ~ 1400px */
+@media screen and (max-width: 1400px) {
+	.inner {
+		padding-left: 0;
+		margin: 0 auto;
+	}
+
+	nav.gnb ul {
+		display: none;
+	}
+
+	.visual .mainTit h2 {
+		font-size: 70px;
+	}
+
+	.introd .history {
+		padding: 250px 0 200px;
+		margin: 150px auto;
+	}
+
+	.history ol {
+		width: 100%;
+		font-size: 0.95rem;
+	}
+
+	.history ol > li span {
+		font-size: 14px;
+		line-height: 1.2;
+	}
+
+	.history ol > li:nth-child(5) {
+		padding: 0 30px;
+	}
+
+	.history ol > li:after {
+		bottom: -85px;
+	}
+
+	.skills .pie-chart li {
+		width: 165px;
+		height: 165px;
+	}
+
+	.skills .pie-chart li .center {
+		width: 120px;
+		height: 120px;
+		line-height: 7rem;
+	}
+
+	.skills .pie-chart li p {
+		font-size: 14px;
+	}
+
+	.contact .inner h2 {
+		font-size: 7em;
+	}
+
+	form p label {
+		font-size: 18px;
+	}
+}
+
+/* 769px ~ 1000px */
+@media screen and (max-width: 1000px) {
+	.wrap {
+		font-size: 14px;
+	}
+
+	h2 {
+		font-size: 35px;
+	}
+
+	.visual .mainTit h2 {
+		font-size: 45px;
+	}
+
+	.profile h3 {
+		font-size: 80px;
+	}
+
+	.introd .quote_box .title {
+		font-size: 30px;
+	}
+
+	.introd .quote_box p {
+		font-size: 14px;
+	}
+
+	.introd .history {
+		padding: 200px 0 140px;
+	}
+
+	.history ol {
+		font-size: 14px;
+	}
+
+	.history ol > li:nth-child(4) {
+		display: none;
+	}
+
+	.history ol > li:after {
+		bottom: -115px;
+	}
+
+	.history ol > li:last-child ul {
+		margin-left: -65px;
+	}
+
+	.history ol > li span {
+		display: none;
+	}
+
+	.history ol > li:nth-child(1) span, 
+	.history ol > li:nth-child(3) span, 
+	.history ol > li:nth-child(4) span {
+		display: none;
+	}
+
+	.skills ul.pie-chart {
+		width: 100%;
+	}
+
+	.skills .pie-chart li .center {
+		font-size: 1.5rem;
+	}
+
+	.contact .inner h2 {
+		font-size: 6em;
+	}
+
+	.contact .inner h2.gray {
+		top: -80px;
+	}
+
+	form p input {
+		line-height: 3.6;
+	}
+
+	footer p {
+		font-size: 1.1em;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.wrap {
+		font-size: 12.5px;
+	}
+
+	.visual .mainTit h2 {
+		font-size: 40px;
+	}
+
+	section.profile {
+		margin: 150px 0;
+	}
+
+	.profile h3 {
+		font-size: 60px;
+	}
+
+	.introd .quote_box .title {
+		font-size: 24px;
+	}
+
+	.introd .quote_box i {
+		font-size: 25px;
+	}
+
+	.introd .quote_box .right {
+		right: 9%;
+	}
+
+	.introd .history .line {
+		height: 25px;
+	}
+
+	.history ol > li {
+		padding: 0;
+	}
+
+	.history ol > li:nth-child(5) {
+		padding: 0;
+	}
+
+	.history ol > li:nth-child(2) ul {
+		margin-left: -50px;
+	}
+
+	.skills ul.pie-chart {
+		width: 70%;
+	}
+	.skills .pie-chart li {
+		margin-bottom: 50px;
+	}
 }
